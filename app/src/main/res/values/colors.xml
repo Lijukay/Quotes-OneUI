@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="about_page_secondary_text_color">#ff8c8c8c</color>
+    <color name="textColor">#000000</color>
+    <color name="cardBackground">#7890FF</color>
+    <color name="cardText">#ffffff</color>
+
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Nutzer/.gradle/caches/transforms-3/50edd0c3375b430f90ffe6efaa7cfad7/transformed/design-1.1.0/res/menu/app_info_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Nutzer/AndroidStudioProjects/Quotes/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Nutzer/AndroidStudioProjects/Quotes/app/src/main/res/layout/activity_profile.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/Nutzer/AndroidStudioProjects/Quotes/app/src/main/res/layout/list_item.xml" value="0.25" />
+        <entry key="..\:/Users/Nutzer/AndroidStudioProjects/Quotes/app/src/main/res/layout/list_items_main.xml" value="0.203125" />
+        <entry key="..\:/Users/Nutzer/AndroidStudioProjects/Quotes/app/src/main/res/layout/profile_activity.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/Nutzer/AndroidStudioProjects/Quotes/app/src/main/res/layout/sample3_widget_cardview.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/Nutzer/AndroidStudioProjects/Quotes/app/src/main/res/layout/sample3_widget_cardview_icon.xml" value="0.16032608695652173" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
