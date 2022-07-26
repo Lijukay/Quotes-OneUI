@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         setAdapter();
     }
 
+
     private void setAdapter() {
         setOnClickListener();
         RecyclerAdapter adapter = new RecyclerAdapter(this, personsList, listener);
@@ -49,9 +51,16 @@ public class MainActivity extends AppCompatActivity {
 
     private void setOnClickListener() {
         listener = (v, position) -> {
-            Intent intent = new Intent(getApplicationContext(), PersonsActivity.class);
-            intent.putExtra("person", personsList.get(position).getPersonsName());
-            startActivity(intent);
+            String name = personsList.get(position).getPersonsName().toString();
+            switch (name){
+                case "Unknown":
+                    Intent intent = new Intent(this, PersonsActivity.class);
+                    startActivity(intent);
+                    break;
+                case "William Shakespears":
+                    Toast.makeText(this, "Will be added on the next update", Toast.LENGTH_SHORT).show();
+                    break;
+            }
         };
     }
 

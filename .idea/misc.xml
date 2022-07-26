@@ -4,14 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Nutzer/.gradle/caches/transforms-3/50edd0c3375b430f90ffe6efaa7cfad7/transformed/design-1.1.0/res/menu/app_info_menu.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Nutzer/AndroidStudioProjects/Quotes/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Nutzer/AndroidStudioProjects/Quotes/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/Nutzer/AndroidStudioProjects/Quotes/app/src/main/res/layout/activity_profile.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/Nutzer/AndroidStudioProjects/Quotes/app/src/main/res/layout/list_item.xml" value="0.25" />
         <entry key="..\:/Users/Nutzer/AndroidStudioProjects/Quotes/app/src/main/res/layout/list_items_main.xml" value="0.203125" />
-        <entry key="..\:/Users/Nutzer/AndroidStudioProjects/Quotes/app/src/main/res/layout/persons_activity.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/Nutzer/AndroidStudioProjects/Quotes/app/src/main/res/layout/list_quote.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/Nutzer/AndroidStudioProjects/Quotes/app/src/main/res/layout/list_quote_ws.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/Nutzer/AndroidStudioProjects/Quotes/app/src/main/res/layout/list_quotes_item.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/Nutzer/AndroidStudioProjects/Quotes/app/src/main/res/layout/persons_activity.xml" value="0.22" />
         <entry key="..\:/Users/Nutzer/AndroidStudioProjects/Quotes/app/src/main/res/layout/profile_activity.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/Nutzer/AndroidStudioProjects/Quotes/app/src/main/res/layout/sample3_widget_cardview.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/Nutzer/AndroidStudioProjects/Quotes/app/src/main/res/layout/sample3_widget_cardview_icon.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/Nutzer/AndroidStudioProjects/Quotes/app/src/main/res/layout/william_shakespears.xml" value="0.16032608695652173" />
       </map>
     </option>
   </component>

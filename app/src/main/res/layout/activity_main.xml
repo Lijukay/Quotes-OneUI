@@ -14,13 +14,12 @@
         android:overScrollMode="always"
         android:fillViewport="true">
 
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        tools:listitem="@layout/list_item"
-                        android:background="@color/oui_background_color"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/list_item"
+            android:background="@color/oui_background_color"/>
 
 
     </androidx.core.widget.NestedScrollView>

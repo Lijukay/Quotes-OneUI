@@ -6,7 +6,15 @@
     android:id="@+id/toolbar_persons"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:expanded="true"
-    app:title=""
+    app:title="Unknown"
+    app:navigationIcon="@drawable/ic_back"
     tools:context=".PersonsActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/persons"/>
+
 
 </dev.oneuiproject.oneui.layout.ToolbarLayout>
