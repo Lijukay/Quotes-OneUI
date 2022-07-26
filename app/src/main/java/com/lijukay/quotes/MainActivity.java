@@ -22,6 +22,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private ArrayList<Persons> personsList;
     private RecyclerView recyclerView;
+    private RecyclerAdapter.RecyclerViewClickListener listener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setAdapter() {
-        RecyclerAdapter adapter = new RecyclerAdapter(this, personsList);
+        setOnClickListener();
+        RecyclerAdapter adapter = new RecyclerAdapter(this, personsList, listener);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
@@ -45,12 +47,18 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.seslSetLastRoundedCorner(true);
     }
 
+    private void setOnClickListener() {
+        listener = (v, position) -> {
+            Intent intent = new Intent(getApplicationContext(), PersonsActivity.class);
+            intent.putExtra("person", personsList.get(position).getPersonsName());
+            startActivity(intent);
+        };
+    }
+
     private void setPersonsName() {
         personsList.add(new Persons("Personen", true));
         personsList.add(new Persons("Unknown"));
         personsList.add(new Persons("William Shakespears"));
-        personsList.add(new Persons("A"));
-        personsList.add(new Persons("Alfredo"));
     }
     private class ItemDecoration extends RecyclerView.ItemDecoration {
         private final Drawable mDivider;
