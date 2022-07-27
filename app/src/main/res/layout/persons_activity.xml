@@ -6,20 +6,15 @@
     android:id="@+id/toolbar_persons"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:expanded="true"
-    app:title="Unknown"
+    app:title=""
     app:navigationIcon="@drawable/ic_back"
     tools:context=".PersonsActivity">
 
-    <FrameLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewQuotes"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            android:text="I want to show recyclerviews here based on the name i clicked before"/>
-    </FrameLayout>
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/list_item"
+        android:background="@color/oui_background_color"/>
 
 </dev.oneuiproject.oneui.layout.ToolbarLayout>

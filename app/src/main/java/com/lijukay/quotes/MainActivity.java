@@ -50,24 +50,59 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setOnClickListener() {
-        listener = (v, position) -> {
-            String name = personsList.get(position).getPersonsName().toString();
-            switch (name){
-                case "Unknown":
-                    Intent intent = new Intent(this, PersonsActivity.class);
-                    startActivity(intent);
-                    break;
-                case "William Shakespears":
-                    Toast.makeText(this, "Will be added on the next update", Toast.LENGTH_SHORT).show();
-                    break;
+        listener = new RecyclerAdapter.RecyclerViewClickListener() {
+            @Override
+            public void onClick(View v, int position) {
+                Intent intentOC = new Intent(getApplicationContext(), PersonsActivity.class);
+                intentOC.putExtra("personsName", personsList.get(position).getPersonsName());
+                startActivity(intentOC);
             }
         };
     }
 
     private void setPersonsName() {
-        personsList.add(new Persons("Personen", true));
+        personsList.add(new Persons("Persons", true));
+        //A
+        personsList.add(new Persons("Astrid Alauda"));
+        //B
+        personsList.add(new Persons("Benjamin Franklin"));
+        //C
+        personsList.add(new Persons("Charles Bukowski"));
+        personsList.add(new Persons("Coco Chanel"));
+        //D
+        personsList.add(new Persons("Dolly Parton"));
+        //E
+        personsList.add(new Persons("Ernest Hemingway"));
+        //F
+        //G
+        personsList.add(new Persons("George Addair"));
+        //H
+        //I
+        //J
+        personsList.add(new Persons("Joker"));
+        personsList.add(new Persons("Joseph Camphell"));
+        personsList.add(new Persons("John Wooden"));
+        //K
+        //L
+        personsList.add(new Persons("Lilian Dickson"));
+        //M
+        //N
+        //O
+        //P
+        //Q
+        //R
+        personsList.add(new Persons("Robert Schuller"));
+        //S
+        //T
+        //U
         personsList.add(new Persons("Unknown"));
-        personsList.add(new Persons("William Shakespears"));
+        //V
+        //W
+        personsList.add(new Persons("William Shakespeare"));
+        personsList.add(new Persons("Winnie Pooh"));
+        //X
+        //Y
+        //Z
     }
     private class ItemDecoration extends RecyclerView.ItemDecoration {
         private final Drawable mDivider;
