@@ -8,8 +8,9 @@ public class Persons {
         return personsName;
     }
 
-    public void setPersonsName(String personsName) {
+    public void setPersonsName(String personsName, String tag) {
         this.personsName = personsName;
+
     }
 
     public Persons(String personsName) {

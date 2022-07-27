@@ -4,6 +4,7 @@ package com.lijukay.quotes;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.TypedValue;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import androidx.annotation.ColorRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.util.SeslRoundedCorner;
@@ -66,6 +68,12 @@ public class PersonsActivity extends AppCompatActivity {
             case "Benjamin Franklin":
                 setQuotesNameBF();
                 break;
+            case "Blaise Pascal":
+                setQuotesNameBP();
+                break;
+            case "Bob Marley":
+                setQuotesNameBM();
+                break;
             //C
             case "Charles Bukowski":
                 setQuotesNameCB();
@@ -89,6 +97,9 @@ public class PersonsActivity extends AppCompatActivity {
             //H
             //I
             //J
+            case "Johann Wolfgang Goethe":
+                setQuotesNameJWG();
+                break;
             case "Joker":
                 setQuotesNameJ();
                 break;
@@ -98,15 +109,36 @@ public class PersonsActivity extends AppCompatActivity {
             case "John Wooden":
                 setQuotesNameJW();
                 break;
+            case "Jackson Brown":
+                setQuotesNameJB();
+                break;
+            case "Jean Paul":
+                setQuotesNameJP();
+                break;
             //K
+            case "Konfuzius":
+                setQuotesNameK();
+                break;
             //L
+            case "Lew Tolstoi":
+                setQuotesNameLT();
+                break;
             case "Lilian Dickson":
                 setQuotesNameLD();
+                break;
+            case "Lucius Seneca":
+                setQuotesNameLS();
+                break;
+            case "Laotse":
+                setQuotesNameL();
                 break;
             //M
             //N
             //O
             //P
+            case "Pablo Picasso":
+                setQuotesNamePP();
+                break;
             //Q
             //R
             case "Robert Schuller":
@@ -133,87 +165,137 @@ public class PersonsActivity extends AppCompatActivity {
 
         setAdapterq();
     }
+
+
+
     //A
     private void setQuotesNameAA() {
-        quotesList.add(new Quotes("The wounds you do not see, are the most difficult to cure"));
+        quotesList.add(new Quotes("Die Wunden, die du nicht siehst, sind am schwersten zu heilen"));
     }
     //B
     private void setQuotesNameBF() {
-        quotesList.add(new Quotes("Some people are dying at the age of 25 but are buried at the age of 75"));
+        quotesList.add(new Quotes("Manche Leute sterben mit 25, aber werden erst mit 75 beerdigt"));
+    }
+    private void setQuotesNameBP() {
+        quotesList.add(new Quotes("Ein Tropfen Liebe ist mehr als ein Ozean Verstand"));
+    }
+    private void setQuotesNameBM() {
+        quotesList.add(new Quotes("Die guten Zeiten von heute sind die traurigen Gedanken von morgen"));
+        quotesList.add(new Quotes("Öffne die Augen, schau nach innen. Bist du zufrieden mit dem Leben, das du lebst"));
+        quotesList.add(new Quotes("Der Tag an dem du aufhörst das Rennen mitzumachen, ist der Tag an dem du das Rennen gewinnst"));
+        quotesList.add(new Quotes("Liebe das Leben, das du lebst. Lebe das Leben, das du liebst."));
     }
     //C
     private void setQuotesNameCB() {
-        quotesList.add(new Quotes("Do you remember who you were before the world told you who to be?"));
+        quotesList.add(new Quotes("Kannst du dich erinnern wer du warst, bevor dir die Welt gesagt hat, wer du bist?"));
     }
     private void setQuotesNameCC(){
-        quotesList.add(new Quotes("I do not regret anything in life except for the things I did not do"));
+        quotesList.add(new Quotes("Ich bereue nichts im Leben, außer dem, was ich nicht getan habe"));
+        quotesList.add(new Quotes("Wenn man ohne Flügel geboren wurde, darf man sie nicht am wachsen hindern."));
     }
     //D
     private void setQuotesNameDP() {
-        quotesList.add(new Quotes("If you don't like the path you're walking, simply make a new one."));
-        quotesList.add(new Quotes("When someone shows you their true colors, thrust them."));
+        quotesList.add(new Quotes("Wenn du den Weg auf dem du gehst nicht magst, mach dir einen neuen"));
+        quotesList.add(new Quotes("Wenn dir jemand seine wahren Farben zeigt, vertraue ihm"));
     }
     //E
     private void setQuotesNameEH() {
-        quotesList.add(new Quotes("You are so brave and quiet that I forget that you are suffering"));
+        quotesList.add(new Quotes("Du bist so mutig und ruhig, dass ich vergesse, dass du leidest"));
     }
     //F
     //G
     private void setQuotesNameGA(){
-        quotesList.add(new Quotes("Everything you ever wanted is on the other side of the fear"));
+        quotesList.add(new Quotes("Alles was du jemals wolltest ist auf der anderen Seite der Angst"));
     }
     //H
     //I
     //J
+     private void setQuotesNameJP() {
+        quotesList.add(new Quotes("Vielleicht gibt es schönere Zeiten, aber das hier ist unsere Zeit"));
+    }
+    private void setQuotesNameJWG(){
+        quotesList.add(new Quotes("Es muss vom Herzen kommen, was auf Herzen wirken soll"));
+    }
     private void setQuotesNameJW() {
-        quotesList.add(new Quotes("Do not give up on your dreams or your dreams will give up on you"));
+        quotesList.add(new Quotes("Gib deine Träume nicht auf oder deine Träume geben dich auf"));
     }
 
     private void setQuotesNameJC() {
-        quotesList.add(new Quotes("The cage you fear to enter includes the treasure you are searching"));
+        quotesList.add(new Quotes("Der Käfig, den du dich nicht traust zu betreten, hat den Schatz, den du suchst"));
     }
 
     private void setQuotesNameJ() {
-        quotesList.add(new Quotes("Pain is not just visible in tears. Sometimes it is hidden behind a smile."));
+        quotesList.add(new Quotes("Schmerz sieht man nicht nur in Tränen, manchmal ist es auch hinter einem Lächeln versteckt"));
+        quotesList.add(new Quotes("Viele können dich zum lachen bringe, aber nur wenige können dich glücklich machen"));
+    }
+    private void setQuotesNameJB(){
+        quotesList.add(new Quotes("Manchmal sieht das Herz Dinge, die für das Auge unsichtbar sind"));
     }
     //K
+    private void setQuotesNameK(){
+        quotesList.add(new Quotes("Es ist nicht von Bedeutung wie langsam du gehst, solange du nicht stehenbleibst"));
+    }
     //L
+    private void setQuotesNameLT(){
+        quotesList.add(new Quotes("Alle wollen die Welt verändern aber keiner sich selbst"));
+    }
     private void setQuotesNameLD() {
-        quotesList.add(new Quotes("The life is like a coin. You can buy anything with it but just one time"));
+        quotesList.add(new Quotes("Das Leben ist wie eine Münze, du kannst alles mit ihr kaufen, aber nur einmal"));
+    }
+    private void setQuotesNameLS() {
+        quotesList.add(new Quotes("Den Charakter kann man auch aus den kleinsten Handlungen erkennen"));
+    }
+    private void setQuotesNameL(){
+        quotesList.add(new Quotes("Auch eine Reise von tausend Meilen beginnt mit einem Schritt"));
     }
     //M
     //N
     //O
     //P
+    private void setQuotesNamePP(){
+        quotesList.add(new Quotes("Alles, was du dir vorstellen kannst ist real"));
+    }
     //Q
     //R
     //S
     private void setQuotesNameRS() {
-        quotesList.add(new Quotes("What would you do if you would know that you cannot lose?"));
+        quotesList.add(new Quotes("Was würdest du tun, wenn du wüsstest, dass nicht scheitern kannst?"));
     }
     //T
     //U
     private void setQuotesNameU() {
-        quotesList.add(new Quotes("I would like to travel back to the past, not to avoid mistakes but to give a hug to somebody who is not here anymore."));
-        quotesList.add(new Quotes("Broken humans smile the most beautiful smile, because they know what luck means."));
-        quotesList.add(new Quotes("It is not the things that scares us, it is the way we think about it."));
-        quotesList.add(new Quotes("The worst feeling is, when you are at home but have the feeling you want to go home."));
-        quotesList.add(new Quotes("Sometimes good things end because the people are not ready for it."));
-        quotesList.add(new Quotes("If you are not ready for it you would not have the possibility to do it."));
-        quotesList.add(new Quotes("The worst kind of sadness is the one you cannot explain."));
-        quotesList.add(new Quotes("Although thoughts do not weigh anything, you can collapse under their load."));
-        quotesList.add(new Quotes("Grief is not the opposite of luck, it is a part of it."));
-        quotesList.add(new Quotes("The death must be a wonderful place because no one has returned yet"));
+        quotesList.add(new Quotes("Mach es oder mach es nicht, du wirst beides bereuen"));
+        quotesList.add(new Quotes("Kaputte Menschen haben das schönste Lächeln, weil sie wissen, was Glück bedeutet"));
+        quotesList.add(new Quotes("Es sind nicht die Dinge, die uns Angst machen, sondern die Art und weise, wie wir über sie denken"));
+        quotesList.add(new Quotes("Das schlimmste Gefühl ist, wenn du zu Hause bist aber"));
+        quotesList.add(new Quotes("Manchmal enden schöne Dinge, weil die Leute noch nicht bereit dafür sind"));
+        quotesList.add(new Quotes("Wenn du noch nicht bereit dafür wärst, dann hättest du nicht die Möglichkeit dazu."));
+        quotesList.add(new Quotes("Die schlimmste Art von Traurigkeit ist die, die du nicht erklären kannst."));
+        quotesList.add(new Quotes("Obwohl Gedanken nichts wiegen, kann man unter ihrer Last zusammenbrechen."));
+        quotesList.add(new Quotes("Trauer ist nicht das Gegenteil von Glück, es ist ein Teil davon."));
+        quotesList.add(new Quotes("Der Tod muss eine schöne Reise sein, denn bis jetzt ist noch keiner zurückgekehrt."));
+        quotesList.add(new Quotes("Du verdienst die Liebe, die du die ganze Zeit versuchst anderen zu geben."));
+        quotesList.add(new Quotes("Wenn ich an dich denke, dann lächle ich, doch mein Herz tut verdammt weh"));
+        quotesList.add(new Quotes("Sein Herz zu verlieren ist die beste Art zu entdecken, dass man eins hat"));
+        quotesList.add(new Quotes("Es ist egal, wer vor dir steht, wenn du weißt, wer hinter dir steht."));
+        quotesList.add(new Quotes("Manchmal passiert lange Zeit nichts und dann alles auf einmal"));
+        quotesList.add(new Quotes("In dem Moment, wo du dich akzeptierst, wirst du schön"));
+        quotesList.add(new Quotes("Das Leben wiederholt Dinge so lange, bis du die Lektion gelernt hast"));
+        quotesList.add(new Quotes("Woran deine Augen hängen bleiben, zeigt dir wonach deine Seele sucht"));
+        quotesList.add(new Quotes("Ich werde mich nie für mein Herz entschuldigen, das so leicht bricht, aber so stark liebt"));
+        quotesList.add(new Quotes("Du kannst nicht glücklich werden, wenn das, was du etwas festhälst, das dich traurig macht"));
+        quotesList.add(new Quotes("Du kannst mich berühren, ohne mich zu berühren."));
     }
     //V
     //W
     private void setQuotesNameWP() {
-        quotesList.add(new Quotes("How to spell love? You don't spell it, you feel it."));
-        quotesList.add(new Quotes("Some people care a lot of someone. I think that is called love"));
+        quotesList.add(new Quotes("Wie buchstabiert man Liebe? Du buchstabierst es nicht, du fühlst es."));
+        quotesList.add(new Quotes("Manche Leute sorgen sich zu viel um einen, ich denke, man nennt es Liebe."));
     }
 
     private void setQuotesNameWS() {
-        quotesList.add(new Quotes(""));
+        quotesList.add(new Quotes("Die ganze Welt ist eine Bühne und wir alle sind Schauspieler."));
+        quotesList.add(new Quotes("Der Kummer,der nicht spricht, nagt am Herzen, bis es bricht."));
     }
     //X
     //Y
@@ -234,9 +316,6 @@ public class PersonsActivity extends AppCompatActivity {
         recyclerViewq.seslSetFillBottomEnabled(true);
         recyclerViewq.seslSetLastRoundedCorner(true);
     }
-
-
-
     private class ItemDecorationq extends RecyclerView.ItemDecoration {
         private final Drawable mDividerq;
         private final SeslSubheaderRoundedCorner mRoundedCornerq;
@@ -286,3 +365,14 @@ public class PersonsActivity extends AppCompatActivity {
         }
     }
 }
+
+
+//TODO: set quotesName Texts as Strings and add translation
+
+//TODO: Add a about App page
+
+
+
+
+
+// TODO: learn how you can save an instance with sharedPreferences or database and take the time you need

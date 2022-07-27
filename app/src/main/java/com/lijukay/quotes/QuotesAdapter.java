@@ -62,6 +62,7 @@ public class QuotesAdapter extends RecyclerView.Adapter<QuotesAdapter.QViewHolde
             holderq.textViewq.setLayoutParams(new RecyclerView.LayoutParams(RecyclerView.LayoutParams.MATCH_PARENT, RecyclerView.LayoutParams.WRAP_CONTENT));
         }
         holderq.textViewq.setText(quotesList.get(positionq).getQuotesName());
+        //quotesList.get(positionq).color; <-- not a statement, maybe try to learn how to use this thing?
     }
 
     public class QViewHolder extends RecyclerView.ViewHolder{

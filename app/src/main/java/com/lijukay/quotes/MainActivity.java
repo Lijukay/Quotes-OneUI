@@ -61,11 +61,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setPersonsName() {
-        personsList.add(new Persons("Persons", true));
+        personsList.add(new Persons(getString(R.string.persons), true));
         //A
         personsList.add(new Persons("Astrid Alauda"));
         //B
+        personsList.add(new Persons("Blaise Pascal"));
         personsList.add(new Persons("Benjamin Franklin"));
+        personsList.add(new Persons("Bob Marley"));
         //C
         personsList.add(new Persons("Charles Bukowski"));
         personsList.add(new Persons("Coco Chanel"));
@@ -79,16 +81,24 @@ public class MainActivity extends AppCompatActivity {
         //H
         //I
         //J
+        personsList.add(new Persons("Johann Wolfgang Goethe"));
+        personsList.add(new Persons("Jean Paul"));
         personsList.add(new Persons("Joker"));
         personsList.add(new Persons("Joseph Camphell"));
         personsList.add(new Persons("John Wooden"));
+        personsList.add(new Persons("Jackson Brown"));
         //K
+        personsList.add(new Persons("Konfuzius"));
         //L
+        personsList.add(new Persons("Lew Tolstoi"));
         personsList.add(new Persons("Lilian Dickson"));
+        personsList.add(new Persons("Lucius Seneca"));
+        personsList.add(new Persons("Laotse"));
         //M
         //N
         //O
         //P
+        personsList.add(new Persons("Pablo Picasso"));
         //Q
         //R
         personsList.add(new Persons("Robert Schuller"));
