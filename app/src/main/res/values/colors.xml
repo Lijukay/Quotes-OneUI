@@ -4,7 +4,8 @@
 
     <color name="about_page_secondary_text_color">#ff8c8c8c</color>
     <color name="textColor">#000000</color>
-    <color name="cardBackground">#C4CFFF</color>
-    <color name="cardText">#ffffff</color>
+    <color name="cardBackgroundSadQuote">#C4CFFF</color>
+    <color name="cardBackgroundHappyQuote">#FF6F6F</color>
+    <color name="cardBackgroundLoveQuote">#FF80F3</color>
 
 </resources>
