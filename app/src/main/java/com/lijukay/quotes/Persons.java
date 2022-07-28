@@ -10,7 +10,7 @@ public class Persons {
         return personsName;
     }
 
-    public void setPersonsName(String personsName, String tag) {
+    public void setPersonsName(String personsName) {
         this.personsName = personsName;
 
     }

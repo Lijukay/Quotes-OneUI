@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import dev.oneuiproject.oneui.widget.Separator;
 //Code by Yanndroid
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
-    private ArrayList<Persons> personsList;
+    private final ArrayList<Persons> personsList;
     public RecyclerViewClickListener listener;
 
 
@@ -36,7 +36,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     public int getItemViewType(int position) {
         return (personsList.get(position).isSeparator) ? 1 : 0;
     }
-    private Context mContext;
+    private final Context mContext;
 
 
 

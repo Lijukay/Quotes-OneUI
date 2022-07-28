@@ -6,7 +6,6 @@ import androidx.appcompat.util.SeslRoundedCorner;
 import androidx.appcompat.util.SeslSubheaderRoundedCorner;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
@@ -15,7 +14,6 @@ import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
-
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -51,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         //E
         personsList.add(new Persons("Ernest Hemingway"));
         //F
+        personsList.add(new Persons("Franz Kafka"));
         //G
         personsList.add(new Persons("George Addair"));
         //H
@@ -70,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         personsList.add(new Persons("Lucius Seneca"));
         personsList.add(new Persons("Laotse"));
         //M
+        personsList.add(new Persons("Mark Aurel"));
         //N
         //O
         //P
@@ -105,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.seslSetFillBottomEnabled(true);
         recyclerView.seslSetLastRoundedCorner(true);
     }
-
     //OnClickListener
     private void setOnClickListener() {
         listener = (v, position) -> {
@@ -122,9 +121,6 @@ public class MainActivity extends AppCompatActivity {
             }
         };
     }
-
-
-
     //Item Decoration, code by Yanndroid
     private static class ItemDecoration extends RecyclerView.ItemDecoration {
         private final Drawable mDivider;

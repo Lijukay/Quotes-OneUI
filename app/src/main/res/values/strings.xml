@@ -4,11 +4,11 @@
     <!--QuotesNameAA-->
     <string name="QuoteAA1">Die Wunden, die du nicht siehst, sind am schwersten zu heilen</string>
     <!--QuotesNameBF-->
-    <string name="QuoteBF1">Manche Leute sterben mit 25, aber werden erst mit 75 beerdigt</string>
+    <string name="QuoteBF1">Die meisten Menschen sterben mit 25 Jahren und werden erst begraben, wenn sie 75 sind.</string>
     <!--QuotesNameBP-->
     <string name="QouteBP1">Ein Tropfen Liebe ist mehr als ein Ozean Verstand</string>
     <!--QuotesNameBM-->
-    <string name="QuoteBM1">Die guten Zeiten von heute sind die traurigen Gedanken von morgen</string>
+    <string name="QuoteBM1">Die guten Zeiten von heute sind die traurigen Gedanken von morgen.</string>
     <string name="QuoteBM2">Öffne die Augen, schau nach innen. Bist du zufrieden mit dem Leben, das du lebst</string>
     <string name="QuoteBM3">Der Tag an dem du aufhörst das Rennen mitzumachen, ist der Tag an dem du das Rennen gewinnst</string>
     <string name="QuoteBM4">Liebe das Leben, das du lebst. Lebe das Leben, das du liebst.</string>
@@ -18,18 +18,19 @@
     <string name="QuoteCC1">Ich bereue nichts im Leben, außer dem, was ich nicht getan habe</string>
     <string name="QuoteCC2">Wenn man ohne Flügel geboren wurde, darf man sie nicht am wachsen hindern.</string>
     <!--QuotesNameDP-->
-    <string name="QuoteDP1">Wenn du den Weg auf dem du gehst nicht magst, mach dir einen neuen</string>
     <string name="QuoteDP2">Wenn dir jemand seine wahren Farben zeigt, vertraue ihm</string>
     <!--QuotesNameEH-->
     <string name="QuoteEH1">Du bist so mutig und ruhig, dass ich vergesse, dass du leidest</string>
+    <!--QuotesNameFK-->
+    <string name="QuoteFK1">Wege entstehen dadurch, dass man sie geht.</string>
     <!--QuotesNameGA-->
     <string name="QuotesGA1">Alles was du jemals wolltest ist auf der anderen Seite der Angst</string>
     <!--QuotesNameJP-->
     <string name="QuotesJP1">Vielleicht gibt es schönere Zeiten, aber das hier ist unsere Zeit</string>
     <!--QuotesNameJWG-->
     <string name="QuotesJWG1">Es muss vom Herzen kommen, was auf Herzen wirken soll</string>
+    <string name="QuotesJWG2">Wer nicht angefangen hat, wird niemals fertig werden</string>
     <!--QuotesNameJW-->
-    <string name="QuotesJW1">Gib deine Träume nicht auf oder deine Träume geben dich auf</string>
     <!--QuotesNameJC-->
     <string name="QuotesJC1">Der Käfig, den du dich nicht traust zu betreten, hat den Schatz, den du suchst</string>
     <!--QuotesNameJ-->
@@ -47,10 +48,12 @@
     <string name="QuoteLS1">Den Charakter kann man auch aus den kleinsten Handlungen erkennen</string>
     <!--QuoteNameL-->
     <string name="QuoteL1">Auch eine Reise von tausend Meilen beginnt mit einem Schritt</string>
+    <!--QuoteNameMA-->
+    <string name="QuoteMA1">Nicht den Tod sollte man fürchten, sondern dass man nie anfangen wird, zu leben</string>
     <!--QuoteNamePP-->
     <string name="QuotePP1">Alles, was du dir vorstellen kannst ist real</string>
     <!--QuoteNameRS-->
-    <string name="QuoteRS1">Was würdest du tun, wenn du wüsstest, dass nicht scheitern kannst?</string>
+    <string name="QuoteRS1">Was würdest du tun, wenn du wüsstest, dass du nicht scheitern kannst?</string>
     <!--QuoteNameU-->
     <string name="QuoteU1">Mach es oder mach es nicht, du wirst beides bereuen</string>
     <string name="QuoteU2">Kaputte Menschen haben das schönste Lächeln, weil sie wissen, was Glück bedeutet</string>
@@ -73,6 +76,7 @@
     <string name="QuoteU19">Ich werde mich nie für mein Herz entschuldigen, das so leicht bricht, aber so stark liebt</string>
     <string name="QuoteU20">Du kannst nicht glücklich werden, wenn das, was du etwas festhälst, das dich traurig macht</string>
     <string name="QuoteU21">Du kannst mich berühren, ohne mich zu berühren.</string>
+    <string name="QuoteU22">Eine Beziehung zu Menschen baut man nicht in Tagen, Wochen oder Monaten auf, sondern in Momenten</string>
     <!--QuoteNameWP-->
     <string name="QuoteWP1">Wie buchstabiert man Liebe? Du buchstabierst es nicht, du fühlst es.</string>
     <string name="QuoteWP2">Manche Leute sorgen sich zu viel um einen, ich denke, man nennt es Liebe.</string>
@@ -89,4 +93,6 @@
     <!--Reach me-->
     <string name="RM">Du möchtest mich kontaktieren oder hast einen Fehler gefunden?</string>
     <string name="Info">Wenn du einen Fehler gefunden hast, kannst du ihn gerne auf GitHub unter \"Issues\", oder mir privat auf Telegram schreiben.\nWenn du mir ein Zitat schicken möchtest, kannst du das gerne auf Telegram machen.</string>
+    <string name="QuoteDP1">Wenn du den Weg auf dem du gehst nicht magst, mach dir einen neuen</string>
+    <string name="QuotesJW1">Gib deine Träume nicht auf oder deine Träume geben dich auf</string>
 </resources>

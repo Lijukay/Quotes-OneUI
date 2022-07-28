@@ -12,7 +12,7 @@ import dev.oneuiproject.oneui.widget.Separator;
 
 //Code is a changed copy of RecyclerAdapter.java
 public class QuotesAdapter extends RecyclerView.Adapter<QuotesAdapter.QViewHolder> {
-    private ArrayList<Quotes> quotesList;
+    private final ArrayList<Quotes> quotesList;
 
 
     public QuotesAdapter(Context contextq, ArrayList <Quotes> listq){
@@ -33,7 +33,7 @@ public class QuotesAdapter extends RecyclerView.Adapter<QuotesAdapter.QViewHolde
     public int getItemViewType(int positionq) {
         return (quotesList.get(positionq).isSeparatorq) ? 1 : 0;
     }
-    private Context mContextq;
+    private final Context mContextq;
 
 
 

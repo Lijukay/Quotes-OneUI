@@ -2,7 +2,6 @@ package com.lijukay.quotes;
 
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -86,6 +85,8 @@ public class PersonsActivity extends AppCompatActivity {
                 setQuotesNameEH();
                 break;
             //F
+            case "Franz Kafka":
+                setQuotesNameFK();
             //G
             case "George Addair":
                 setQuotesNameGA();
@@ -129,6 +130,9 @@ public class PersonsActivity extends AppCompatActivity {
                 setQuotesNameL();
                 break;
             //M
+            case "Mark Aurel":
+                setQuotesNameMA();
+                break;
             //N
             //O
             //P
@@ -200,6 +204,9 @@ public class PersonsActivity extends AppCompatActivity {
         quotesList.add(new Quotes(getString(R.string.QuoteEH1)));
     }
     //F
+    private void setQuotesNameFK(){
+        quotesList.add(new Quotes(getString(R.string.QuoteFK1)));
+    }
     //G
     private void setQuotesNameGA(){
         quotesList.add(new Quotes(getString(R.string.QuotesGA1)));
@@ -212,6 +219,7 @@ public class PersonsActivity extends AppCompatActivity {
     }
     private void setQuotesNameJWG(){
         quotesList.add(new Quotes(getString(R.string.QuotesJWG1)));
+        quotesList.add(new Quotes(getString(R.string.QuotesJWG2)));
     }
     private void setQuotesNameJW() {
         quotesList.add(new Quotes(getString(R.string.QuotesJW1)));
@@ -244,6 +252,9 @@ public class PersonsActivity extends AppCompatActivity {
         quotesList.add(new Quotes(getString(R.string.QuoteL1)));
     }
     //M
+    private void setQuotesNameMA(){
+        quotesList.add(new Quotes(getString(R.string.QuoteMA1)));
+    }
     //N
     //O
     //P
@@ -280,6 +291,7 @@ public class PersonsActivity extends AppCompatActivity {
         quotesList.add(new Quotes(getString(R.string.QuoteU19)));
         quotesList.add(new Quotes(getString(R.string.QuoteU20)));
         quotesList.add(new Quotes(getString(R.string.QuoteU21)));
+        quotesList.add(new Quotes(getString(R.string.QuoteU22)));
     }
     //V
     //W

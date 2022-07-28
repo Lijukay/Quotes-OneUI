@@ -1,14 +1,10 @@
 package com.lijukay.quotes;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
-
 import dev.oneuiproject.oneui.layout.ToolbarLayout;
 
 public class About extends AppCompatActivity {
