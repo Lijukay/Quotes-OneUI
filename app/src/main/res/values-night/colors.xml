@@ -3,8 +3,6 @@
 
     <color name="about_page_secondary_text_color">#ff747474</color>
     <color name="textColor">#FFFFFF</color>
-    <color name="cardBackgroundSadQuote">#C4CFFF</color>
-    <color name="cardBackgroundHappyQuote">#FF6F6F</color>
-    <color name="cardBackgroundLoveQuote">#FF80F3</color>
+    <color name="cardView">#131313</color>
 
 </resources>

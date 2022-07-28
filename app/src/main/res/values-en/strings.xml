@@ -6,4 +6,7 @@
     <string name="About">About this app</string>
     <string name="ST">Special Thanks…</string>
     <string name="Yanndroid">… to Yanndroid, who did not stopped to explain the things to me even if I did not understand much and who always helped me, when I had a problem.</string>
+    <string name="RM">You want to contact me or you found an issue?</string>
+    <string name="BlackMesa">... to BlackMesa, who helped me to optimize this app.</string>
+    <string name="Info">If you found an issue, you can write it on GitHub in \"Issues\" or privately on Telegram.\nIf you want to send me a quote, you can do it on Telegram.</string>
 </resources>

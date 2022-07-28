@@ -111,10 +111,15 @@ public class MainActivity extends AppCompatActivity {
         listener = (v, position) -> {
             //Creates a new Intent to PersonsActivity.class
             Intent intentOC = new Intent(getApplicationContext(), PersonsActivity.class);
+            if(personsList.get(position).getPersonsName().equals("About this app") || personsList.get(position).getPersonsName().equals("Über diese App")){
+                Intent intentAbout = new Intent(this, About.class);
+                startActivity(intentAbout);
+            }else{
             //puts some Extra for setting the title of persons_activity.xml
             intentOC.putExtra("personsName", personsList.get(position).getPersonsName());
             //starts the activity
             startActivity(intentOC);
+            }
         };
     }
 

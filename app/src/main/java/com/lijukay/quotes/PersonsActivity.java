@@ -2,6 +2,7 @@ package com.lijukay.quotes;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -51,8 +52,7 @@ public class PersonsActivity extends AppCompatActivity {
         recyclerViewq = findViewById(R.id.recyclerViewQuotes);
         quotesList = new ArrayList<>();
 
-        //Create a String with the current name of the App-Version
-        String versionName = BuildConfig.VERSION_NAME;
+
 
         //Switch to add items to the RecyclerView based on personsName, sorted by the Name
         switch (personsName){
@@ -159,11 +159,6 @@ public class PersonsActivity extends AppCompatActivity {
             //Z
 
             //#
-            case "Über diese App":
-            case "About this app":
-                toolbarLayout.setExpandedSubtitle(versionName);
-                setQuotesNameAbout();
-                break;
         }
 
         setAdapterq();
@@ -299,11 +294,6 @@ public class PersonsActivity extends AppCompatActivity {
     //X
     //Y
     //Z
-    //#
-    private void setQuotesNameAbout(){
-        quotesList.add(new Quotes(getString(R.string.ST), true));
-        quotesList.add(new Quotes(getString(R.string.Yanndroid)));
-    }
 
     //Adapter
     private void setAdapterq() {
