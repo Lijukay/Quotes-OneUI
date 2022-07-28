@@ -43,7 +43,6 @@
     <!--QuoteNameLT-->
     <string name="QuoteLT1">Alle wollen die Welt verändern aber keiner sich selbst</string>
     <!--QuoteNameLD-->
-    <string name="QuoteLD1">Das Leben ist wie eine Münze, du kannst alles mit ihr kaufen, aber nur einmal</string>
     <!--QuoteNameLS-->
     <string name="QuoteLS1">Den Charakter kann man auch aus den kleinsten Handlungen erkennen</string>
     <!--QuoteNameL-->
@@ -51,7 +50,6 @@
     <!--QuoteNameMA-->
     <string name="QuoteMA1">Nicht den Tod sollte man fürchten, sondern dass man nie anfangen wird, zu leben</string>
     <!--QuoteNamePP-->
-    <string name="QuotePP1">Alles, was du dir vorstellen kannst ist real</string>
     <!--QuoteNameRS-->
     <string name="QuoteRS1">Was würdest du tun, wenn du wüsstest, dass du nicht scheitern kannst?</string>
     <!--QuoteNameU-->
@@ -60,7 +58,6 @@
     <string name="QuoteU3">Es sind nicht die Dinge, die uns Angst machen, sondern die Art und weise, wie wir über sie denken</string>
     <string name="QuoteU4">Das schlimmste Gefühl ist, wenn du zu Hause bist aber das Gefühl hast nach Hause zu wollen</string>
     <string name="QuoteU5">Manchmal enden schöne Dinge, weil die Leute noch nicht bereit dafür sind</string>
-    <string name="QuoteU6">Wenn du noch nicht bereit dafür wärst, dann hättest du nicht die Möglichkeit dazu.</string>
     <string name="QuoteU7">Die schlimmste Art von Traurigkeit ist die, die du nicht erklären kannst.</string>
     <string name="QuoteU8">Obwohl Gedanken nichts wiegen, kann man unter ihrer Last zusammenbrechen.</string>
     <string name="QuoteU9">Trauer ist nicht das Gegenteil von Glück, es ist ein Teil davon.</string>
@@ -79,7 +76,6 @@
     <string name="QuoteU22">Eine Beziehung zu Menschen baut man nicht in Tagen, Wochen oder Monaten auf, sondern in Momenten</string>
     <!--QuoteNameWP-->
     <string name="QuoteWP1">Wie buchstabiert man Liebe? Du buchstabierst es nicht, du fühlst es.</string>
-    <string name="QuoteWP2">Manche Leute sorgen sich zu viel um einen, ich denke, man nennt es Liebe.</string>
     <!--QuoteNameWS-->
     <string name="QuoteWS1">Die ganze Welt ist eine Bühne und wir alle sind Schauspieler.</string>
     <string name="QuoteWS2">Der Kummer,der nicht spricht, nagt am Herzen, bis es bricht.</string>
@@ -95,4 +91,8 @@
     <string name="Info">Wenn du einen Fehler gefunden hast, kannst du ihn gerne auf GitHub unter \"Issues\", oder mir privat auf Telegram schreiben.\nWenn du mir ein Zitat schicken möchtest, kannst du das gerne auf Telegram machen.</string>
     <string name="QuoteDP1">Wenn du den Weg auf dem du gehst nicht magst, mach dir einen neuen</string>
     <string name="QuotesJW1">Gib deine Träume nicht auf oder deine Träume geben dich auf</string>
+    <string name="QuoteLD1">Das Leben ist wie eine Münze, du kannst alles mit ihr kaufen, aber nur einmal</string>
+    <string name="QuotePP1">Alles, was du dir vorstellen kannst ist real</string>
+    <string name="QuoteU6">Wenn du noch nicht bereit dafür wärst, dann hättest du nicht die Möglichkeit dazu.</string>
+    <string name="QuoteWP2">Manche Leute sorgen sich zu viel um einen, ich denke, man nennt es Liebe.</string>
 </resources>

@@ -4,5 +4,7 @@
     <color name="about_page_secondary_text_color">#ff747474</color>
     <color name="textColor">#FFFFFF</color>
     <color name="cardView">#131313</color>
+    <color name="iconBackground">#000000</color>
+    <color name="iconForeground">#ffffff</color>
 
 </resources>
