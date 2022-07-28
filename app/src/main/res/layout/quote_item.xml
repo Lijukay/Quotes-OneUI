@@ -13,6 +13,8 @@
         android:text=""
         android:textColor="@color/textColor"
         android:textSize="20sp"
-        android:paddingVertical="14dp"/>
+        android:paddingVertical="14dp"
+        android:saveEnabled="true"
+        android:textIsSelectable="true"/>
 
 </RelativeLayout>

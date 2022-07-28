@@ -2,27 +2,20 @@ package com.lijukay.quotes;
 
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-
-import androidx.annotation.ColorRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.util.SeslRoundedCorner;
 import androidx.appcompat.util.SeslSubheaderRoundedCorner;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-
 import java.util.ArrayList;
-
 import dev.oneuiproject.oneui.layout.ToolbarLayout;
 
 public class PersonsActivity extends AppCompatActivity {
@@ -34,20 +27,19 @@ public class PersonsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.persons_activity);
-
         ToolbarLayout toolbarLayout = findViewById(R.id.toolbar_persons);
 
         String personsName = "personsName not set";
-
+        //Get extras to set the Title of the Toolbar-Layout
         Bundle extras = getIntent().getExtras();
-
         if (extras != null){
             personsName = extras.getString("personsName");
         }
-
+        //set the title of the Toolbar-Layout with the name of the clicked Item from MainActivity.java
         toolbarLayout.setTitle(personsName);
-
+        //set Navigation Button as back to always go back to the MainActivity
         toolbarLayout.setNavigationButtonAsBack();
+        //Set Toolbar-Animation(?), code by BlackMesa123
         toolbarLayout.getAppBarLayout().addOnOffsetChangedListener((appBarLayout, verticalOffset) -> {
             final int totalScrollRange = appBarLayout.getTotalScrollRange();
             FrameLayout content = findViewById(dev.oneuiproject.oneui.R.id.main_content);
@@ -59,6 +51,10 @@ public class PersonsActivity extends AppCompatActivity {
         recyclerViewq = findViewById(R.id.recyclerViewQuotes);
         quotesList = new ArrayList<>();
 
+        //Create a String with the current name of the App-Version
+        String versionName = BuildConfig.VERSION_NAME;
+
+        //Switch to add items to the RecyclerView based on personsName, sorted by the Name
         switch (personsName){
             //A
             case "Astrid Alauda":
@@ -161,162 +157,167 @@ public class PersonsActivity extends AppCompatActivity {
             //X
             //Y
             //Z
+
+            //#
+            case "Über diese App":
+            case "About this app":
+                toolbarLayout.setExpandedSubtitle(versionName);
+                setQuotesNameAbout();
+                break;
         }
 
         setAdapterq();
     }
 
-
-
+    //Set Quotes, sorted by Name of Person
     //A
     private void setQuotesNameAA() {
-        quotesList.add(new Quotes("Die Wunden, die du nicht siehst, sind am schwersten zu heilen"));
+        quotesList.add(new Quotes(getString(R.string.QuoteAA1)));
     }
     //B
     private void setQuotesNameBF() {
-        quotesList.add(new Quotes("Manche Leute sterben mit 25, aber werden erst mit 75 beerdigt"));
+        quotesList.add(new Quotes(getString(R.string.QuoteBF1)));
     }
     private void setQuotesNameBP() {
-        quotesList.add(new Quotes("Ein Tropfen Liebe ist mehr als ein Ozean Verstand"));
+        quotesList.add(new Quotes(getString(R.string.QouteBP1)));
     }
     private void setQuotesNameBM() {
-        quotesList.add(new Quotes("Die guten Zeiten von heute sind die traurigen Gedanken von morgen"));
-        quotesList.add(new Quotes("Öffne die Augen, schau nach innen. Bist du zufrieden mit dem Leben, das du lebst"));
-        quotesList.add(new Quotes("Der Tag an dem du aufhörst das Rennen mitzumachen, ist der Tag an dem du das Rennen gewinnst"));
-        quotesList.add(new Quotes("Liebe das Leben, das du lebst. Lebe das Leben, das du liebst."));
+        quotesList.add(new Quotes(getString(R.string.QuoteBM1)));
+        quotesList.add(new Quotes(getString(R.string.QuoteBM2)));
+        quotesList.add(new Quotes(getString(R.string.QuoteBM3)));
+        quotesList.add(new Quotes(getString(R.string.QuoteBM4)));
     }
     //C
     private void setQuotesNameCB() {
-        quotesList.add(new Quotes("Kannst du dich erinnern wer du warst, bevor dir die Welt gesagt hat, wer du bist?"));
+        quotesList.add(new Quotes(getString(R.string.QuoteCB1)));
     }
     private void setQuotesNameCC(){
-        quotesList.add(new Quotes("Ich bereue nichts im Leben, außer dem, was ich nicht getan habe"));
-        quotesList.add(new Quotes("Wenn man ohne Flügel geboren wurde, darf man sie nicht am wachsen hindern."));
+        quotesList.add(new Quotes(getString(R.string.QuoteCC1)));
+        quotesList.add(new Quotes(getString(R.string.QuoteCC2)));
     }
     //D
     private void setQuotesNameDP() {
-        quotesList.add(new Quotes("Wenn du den Weg auf dem du gehst nicht magst, mach dir einen neuen"));
-        quotesList.add(new Quotes("Wenn dir jemand seine wahren Farben zeigt, vertraue ihm"));
+        quotesList.add(new Quotes(getString(R.string.QuoteDP1)));
+        quotesList.add(new Quotes(getString(R.string.QuoteDP2)));
     }
     //E
     private void setQuotesNameEH() {
-        quotesList.add(new Quotes("Du bist so mutig und ruhig, dass ich vergesse, dass du leidest"));
+        quotesList.add(new Quotes(getString(R.string.QuoteEH1)));
     }
     //F
     //G
     private void setQuotesNameGA(){
-        quotesList.add(new Quotes("Alles was du jemals wolltest ist auf der anderen Seite der Angst"));
+        quotesList.add(new Quotes(getString(R.string.QuotesGA1)));
     }
     //H
     //I
     //J
-     private void setQuotesNameJP() {
-        quotesList.add(new Quotes("Vielleicht gibt es schönere Zeiten, aber das hier ist unsere Zeit"));
+    private void setQuotesNameJP() {
+        quotesList.add(new Quotes(getString(R.string.QuotesJP1)));
     }
     private void setQuotesNameJWG(){
-        quotesList.add(new Quotes("Es muss vom Herzen kommen, was auf Herzen wirken soll"));
+        quotesList.add(new Quotes(getString(R.string.QuotesJWG1)));
     }
     private void setQuotesNameJW() {
-        quotesList.add(new Quotes("Gib deine Träume nicht auf oder deine Träume geben dich auf"));
+        quotesList.add(new Quotes(getString(R.string.QuotesJW1)));
     }
-
     private void setQuotesNameJC() {
-        quotesList.add(new Quotes("Der Käfig, den du dich nicht traust zu betreten, hat den Schatz, den du suchst"));
+        quotesList.add(new Quotes(getString(R.string.QuotesJC1)));
     }
-
     private void setQuotesNameJ() {
-        quotesList.add(new Quotes("Schmerz sieht man nicht nur in Tränen, manchmal ist es auch hinter einem Lächeln versteckt"));
-        quotesList.add(new Quotes("Viele können dich zum lachen bringe, aber nur wenige können dich glücklich machen"));
+        quotesList.add(new Quotes(getString(R.string.QuotesJ1)));
+        quotesList.add(new Quotes(getString(R.string.QuotesJ2)));
     }
     private void setQuotesNameJB(){
-        quotesList.add(new Quotes("Manchmal sieht das Herz Dinge, die für das Auge unsichtbar sind"));
+        quotesList.add(new Quotes(getString(R.string.QuoteJB1)));
     }
     //K
     private void setQuotesNameK(){
-        quotesList.add(new Quotes("Es ist nicht von Bedeutung wie langsam du gehst, solange du nicht stehenbleibst"));
+        quotesList.add(new Quotes(getString(R.string.QuoteK1)));
     }
     //L
     private void setQuotesNameLT(){
-        quotesList.add(new Quotes("Alle wollen die Welt verändern aber keiner sich selbst"));
+        quotesList.add(new Quotes(getString(R.string.QuoteLT1)));
     }
     private void setQuotesNameLD() {
-        quotesList.add(new Quotes("Das Leben ist wie eine Münze, du kannst alles mit ihr kaufen, aber nur einmal"));
+        quotesList.add(new Quotes(getString(R.string.QuoteLD1)));
     }
     private void setQuotesNameLS() {
-        quotesList.add(new Quotes("Den Charakter kann man auch aus den kleinsten Handlungen erkennen"));
+        quotesList.add(new Quotes(getString(R.string.QuoteLS1)));
     }
     private void setQuotesNameL(){
-        quotesList.add(new Quotes("Auch eine Reise von tausend Meilen beginnt mit einem Schritt"));
+        quotesList.add(new Quotes(getString(R.string.QuoteL1)));
     }
     //M
     //N
     //O
     //P
     private void setQuotesNamePP(){
-        quotesList.add(new Quotes("Alles, was du dir vorstellen kannst ist real"));
+        quotesList.add(new Quotes(getString(R.string.QuotePP1)));
     }
     //Q
     //R
     //S
     private void setQuotesNameRS() {
-        quotesList.add(new Quotes("Was würdest du tun, wenn du wüsstest, dass nicht scheitern kannst?"));
+        quotesList.add(new Quotes(getString(R.string.QuoteRS1)));
     }
     //T
     //U
     private void setQuotesNameU() {
-        quotesList.add(new Quotes("Mach es oder mach es nicht, du wirst beides bereuen"));
-        quotesList.add(new Quotes("Kaputte Menschen haben das schönste Lächeln, weil sie wissen, was Glück bedeutet"));
-        quotesList.add(new Quotes("Es sind nicht die Dinge, die uns Angst machen, sondern die Art und weise, wie wir über sie denken"));
-        quotesList.add(new Quotes("Das schlimmste Gefühl ist, wenn du zu Hause bist aber"));
-        quotesList.add(new Quotes("Manchmal enden schöne Dinge, weil die Leute noch nicht bereit dafür sind"));
-        quotesList.add(new Quotes("Wenn du noch nicht bereit dafür wärst, dann hättest du nicht die Möglichkeit dazu."));
-        quotesList.add(new Quotes("Die schlimmste Art von Traurigkeit ist die, die du nicht erklären kannst."));
-        quotesList.add(new Quotes("Obwohl Gedanken nichts wiegen, kann man unter ihrer Last zusammenbrechen."));
-        quotesList.add(new Quotes("Trauer ist nicht das Gegenteil von Glück, es ist ein Teil davon."));
-        quotesList.add(new Quotes("Der Tod muss eine schöne Reise sein, denn bis jetzt ist noch keiner zurückgekehrt."));
-        quotesList.add(new Quotes("Du verdienst die Liebe, die du die ganze Zeit versuchst anderen zu geben."));
-        quotesList.add(new Quotes("Wenn ich an dich denke, dann lächle ich, doch mein Herz tut verdammt weh"));
-        quotesList.add(new Quotes("Sein Herz zu verlieren ist die beste Art zu entdecken, dass man eins hat"));
-        quotesList.add(new Quotes("Es ist egal, wer vor dir steht, wenn du weißt, wer hinter dir steht."));
-        quotesList.add(new Quotes("Manchmal passiert lange Zeit nichts und dann alles auf einmal"));
-        quotesList.add(new Quotes("In dem Moment, wo du dich akzeptierst, wirst du schön"));
-        quotesList.add(new Quotes("Das Leben wiederholt Dinge so lange, bis du die Lektion gelernt hast"));
-        quotesList.add(new Quotes("Woran deine Augen hängen bleiben, zeigt dir wonach deine Seele sucht"));
-        quotesList.add(new Quotes("Ich werde mich nie für mein Herz entschuldigen, das so leicht bricht, aber so stark liebt"));
-        quotesList.add(new Quotes("Du kannst nicht glücklich werden, wenn das, was du etwas festhälst, das dich traurig macht"));
-        quotesList.add(new Quotes("Du kannst mich berühren, ohne mich zu berühren."));
+        quotesList.add(new Quotes(getString(R.string.QuoteU1)));
+        quotesList.add(new Quotes(getString(R.string.QuoteU2)));
+        quotesList.add(new Quotes(getString(R.string.QuoteU3)));
+        quotesList.add(new Quotes(getString(R.string.QuoteU4)));
+        quotesList.add(new Quotes(getString(R.string.QuoteU5)));
+        quotesList.add(new Quotes(getString(R.string.QuoteU6)));
+        quotesList.add(new Quotes(getString(R.string.QuoteU7)));
+        quotesList.add(new Quotes(getString(R.string.QuoteU8)));
+        quotesList.add(new Quotes(getString(R.string.QuoteU9)));
+        quotesList.add(new Quotes(getString(R.string.QuoteU10)));
+        quotesList.add(new Quotes(getString(R.string.QuoteU11)));
+        quotesList.add(new Quotes(getString(R.string.QuoteU12)));
+        quotesList.add(new Quotes(getString(R.string.QuoteU13)));
+        quotesList.add(new Quotes(getString(R.string.QuoteU14)));
+        quotesList.add(new Quotes(getString(R.string.QuoteU15)));
+        quotesList.add(new Quotes(getString(R.string.QuoteU16)));
+        quotesList.add(new Quotes(getString(R.string.QuoteU17)));
+        quotesList.add(new Quotes(getString(R.string.QuoteU18)));
+        quotesList.add(new Quotes(getString(R.string.QuoteU19)));
+        quotesList.add(new Quotes(getString(R.string.QuoteU20)));
+        quotesList.add(new Quotes(getString(R.string.QuoteU21)));
     }
     //V
     //W
     private void setQuotesNameWP() {
-        quotesList.add(new Quotes("Wie buchstabiert man Liebe? Du buchstabierst es nicht, du fühlst es."));
-        quotesList.add(new Quotes("Manche Leute sorgen sich zu viel um einen, ich denke, man nennt es Liebe."));
+        quotesList.add(new Quotes(getString(R.string.QuoteWP1)));
+        quotesList.add(new Quotes(getString(R.string.QuoteWP2)));
     }
-
     private void setQuotesNameWS() {
-        quotesList.add(new Quotes("Die ganze Welt ist eine Bühne und wir alle sind Schauspieler."));
-        quotesList.add(new Quotes("Der Kummer,der nicht spricht, nagt am Herzen, bis es bricht."));
+        quotesList.add(new Quotes(getString(R.string.QuoteWS1)));
+        quotesList.add(new Quotes(getString(R.string.QuoteWS2)));
     }
     //X
     //Y
     //Z
+    //#
+    private void setQuotesNameAbout(){
+        quotesList.add(new Quotes(getString(R.string.ST), true));
+        quotesList.add(new Quotes(getString(R.string.Yanndroid)));
+    }
 
-
-
-
-
-
+    //Adapter
     private void setAdapterq() {
         QuotesAdapter adapterq = new QuotesAdapter(this, quotesList);
         RecyclerView.LayoutManager layoutManagerq = new LinearLayoutManager(getApplicationContext());
         recyclerViewq.setLayoutManager(layoutManagerq);
         recyclerViewq.setAdapter(adapterq);
-        recyclerViewq.addItemDecoration(new PersonsActivity.ItemDecorationq(this));
+        recyclerViewq.addItemDecoration(new ItemDecorationq(this));
         recyclerViewq.setItemAnimator(null);
         recyclerViewq.seslSetFillBottomEnabled(true);
         recyclerViewq.seslSetLastRoundedCorner(true);
     }
-    private class ItemDecorationq extends RecyclerView.ItemDecoration {
+    //Item Decoration, code by Yanndroid
+    private static class ItemDecorationq extends RecyclerView.ItemDecoration {
         private final Drawable mDividerq;
         private final SeslSubheaderRoundedCorner mRoundedCornerq;
 

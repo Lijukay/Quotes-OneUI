@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.util.SeslRoundedCorner;
 import androidx.appcompat.util.SeslSubheaderRoundedCorner;
-import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,7 +15,6 @@ import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -36,31 +34,8 @@ public class MainActivity extends AppCompatActivity {
         setAdapter();
     }
 
-
-    private void setAdapter() {
-        setOnClickListener();
-        RecyclerAdapter adapter = new RecyclerAdapter(this, personsList, listener);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
-        recyclerView.addItemDecoration(new ItemDecoration(this));
-        recyclerView.setItemAnimator(null); //remove the other one
-        recyclerView.seslSetFillBottomEnabled(true);
-        recyclerView.seslSetLastRoundedCorner(true);
-    }
-
-    private void setOnClickListener() {
-        listener = new RecyclerAdapter.RecyclerViewClickListener() {
-            @Override
-            public void onClick(View v, int position) {
-                Intent intentOC = new Intent(getApplicationContext(), PersonsActivity.class);
-                intentOC.putExtra("personsName", personsList.get(position).getPersonsName());
-                startActivity(intentOC);
-            }
-        };
-    }
-
     private void setPersonsName() {
+        //PersonsList sorted by Pre-Name
         personsList.add(new Persons(getString(R.string.persons), true));
         //A
         personsList.add(new Persons("Astrid Alauda"));
@@ -113,8 +88,40 @@ public class MainActivity extends AppCompatActivity {
         //X
         //Y
         //Z
+
+        //#
+        personsList.add(new Persons(getString(R.string.about), true));
+        personsList.add(new Persons(getString(R.string.About)));
     }
-    private class ItemDecoration extends RecyclerView.ItemDecoration {
+    //Adapter
+    private void setAdapter() {
+        setOnClickListener();
+        RecyclerAdapter adapter = new RecyclerAdapter(this, personsList, listener);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
+        recyclerView.addItemDecoration(new ItemDecoration(this));
+        recyclerView.setItemAnimator(null); //remove the other one
+        recyclerView.seslSetFillBottomEnabled(true);
+        recyclerView.seslSetLastRoundedCorner(true);
+    }
+
+    //OnClickListener
+    private void setOnClickListener() {
+        listener = (v, position) -> {
+            //Creates a new Intent to PersonsActivity.class
+            Intent intentOC = new Intent(getApplicationContext(), PersonsActivity.class);
+            //puts some Extra for setting the title of persons_activity.xml
+            intentOC.putExtra("personsName", personsList.get(position).getPersonsName());
+            //starts the activity
+            startActivity(intentOC);
+        };
+    }
+
+
+
+    //Item Decoration, code by Yanndroid
+    private static class ItemDecoration extends RecyclerView.ItemDecoration {
         private final Drawable mDivider;
         private final SeslSubheaderRoundedCorner mRoundedCorner;
 

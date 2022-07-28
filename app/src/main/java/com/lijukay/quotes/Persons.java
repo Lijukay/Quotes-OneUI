@@ -1,6 +1,8 @@
 package com.lijukay.quotes;
 
+
 public class Persons {
+    //Code by Yanndroid
     private String personsName;
     public boolean isSeparator;
 

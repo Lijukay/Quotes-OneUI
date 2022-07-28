@@ -1,23 +1,16 @@
 package com.lijukay.quotes;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
-import androidx.appcompat.util.SeslRoundedCorner;
-import androidx.appcompat.util.SeslSubheaderRoundedCorner;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
-
 import dev.oneuiproject.oneui.widget.Separator;
 
+//Code is a changed copy of RecyclerAdapter.java
 public class QuotesAdapter extends RecyclerView.Adapter<QuotesAdapter.QViewHolder> {
     private ArrayList<Quotes> quotesList;
 
@@ -50,9 +43,9 @@ public class QuotesAdapter extends RecyclerView.Adapter<QuotesAdapter.QViewHolde
         if (viewTypeq == 0) {
             LayoutInflater inflaterq = LayoutInflater.from(mContextq);
             View viewq = inflaterq.inflate(R.layout.quote_item, parentq, false);
-            return new QuotesAdapter.QViewHolder(viewq, false);
+            return new QViewHolder(viewq, false);
         } else {
-            return new QuotesAdapter.QViewHolder(new Separator(mContextq), true);
+            return new QViewHolder(new Separator(mContextq), true);
         }
     }
 
@@ -65,7 +58,7 @@ public class QuotesAdapter extends RecyclerView.Adapter<QuotesAdapter.QViewHolde
         //quotesList.get(positionq).color; <-- not a statement, maybe try to learn how to use this thing?
     }
 
-    public class QViewHolder extends RecyclerView.ViewHolder{
+    public static class QViewHolder extends RecyclerView.ViewHolder{
         boolean isSeparatorq;
         TextView textViewq;
 
@@ -80,5 +73,6 @@ public class QuotesAdapter extends RecyclerView.Adapter<QuotesAdapter.QViewHolde
         }
 
     }
+
 }
 

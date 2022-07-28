@@ -2,4 +2,8 @@
 <resources>
     <string name="app_name">Quotes</string>
     <string name="persons">Persons</string>
+    <string name="about">About</string>
+    <string name="About">About this app</string>
+    <string name="ST">Special Thanks…</string>
+    <string name="Yanndroid">… to Yanndroid, who did not stopped to explain the things to me even if I did not understand much and who always helped me, when I had a problem.</string>
 </resources>
