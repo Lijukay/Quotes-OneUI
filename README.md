@@ -1,8 +1,12 @@
-Quotes is an application with a collection of quotes.
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Quotes is an application with a collection of quotes.
+
+
 About this application:
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 This application includes some quotes, mostly deep once. Everything, except the "About this app"-Page is in the style of Samsungs OneUI.
+In the future it will get the Quotes and Persons from a JSON-File from the internet.
+
 
 The libraries I used:
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
