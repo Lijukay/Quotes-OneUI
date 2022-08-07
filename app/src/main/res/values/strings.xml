@@ -87,8 +87,7 @@
     <string name="Yanndroid">… an Yanndroid, der nicht aufgehört hat, mir die Dinge zu erklären, auch wenn ich vieles nicht verstanden habe und der mir immer wieder unter die Arme gegriffen hat, wenn ich Mal wieder ein Problem hatte.</string>
     <string name="BlackMesa">… an BlackMesa, der mir geholfen hat, die App zu optimieren.</string>
     <!--Reach me-->
-    <string name="RM">Du möchtest mich kontaktieren oder hast einen Fehler gefunden?</string>
-    <string name="Info">Wenn du einen Fehler gefunden hast, kannst du ihn gerne auf GitHub unter \"Issues\", oder mir privat auf Telegram schreiben.\nWenn du mir ein Zitat schicken möchtest, kannst du das gerne auf Telegram machen.</string>
+    <string name="RM">Fehler gefunden? Kontakt:</string>
     <string name="QuoteDP1">Wenn du den Weg auf dem du gehst nicht magst, mach dir einen neuen</string>
     <string name="QuotesJW1">Gib deine Träume nicht auf oder deine Träume geben dich auf</string>
     <string name="QuoteLD1">Das Leben ist wie eine Münze, du kannst alles mit ihr kaufen, aber nur einmal</string>

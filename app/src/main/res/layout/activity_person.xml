@@ -6,18 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     app:expanded="true"
-    app:title="@string/app_name"
+    app:title="Persons"
     android:id="@+id/tl"
     tools:menu="@menu/menu_main">
-
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/swipeEC"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeP"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/editorsChoiceRV"
+            android:id="@+id/personsRV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/oui_background_color"/>
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
 </dev.oneuiproject.oneui.layout.ToolbarLayout>

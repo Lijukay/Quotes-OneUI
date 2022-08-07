@@ -6,9 +6,8 @@
     <string name="About">About this app</string>
     <string name="ST">Special Thanks…</string>
     <string name="Yanndroid">… to Yanndroid, who did not stopped to explain the things to me even if I did not understand much and who always helped me, when I had a problem.</string>
-    <string name="RM">You want to contact me or you found an issue?</string>
+    <string name="RM">Found an issue? Contact:</string>
     <string name="BlackMesa">… to BlackMesa, who helped me to optimize this app.</string>
-    <string name="Info">If you found an issue, you can write it on GitHub in \"Issues\" or privately on Telegram.\nIf you want to send me a quote, you can do it on Telegram.</string>
     <string name="QuoteAA1">The wounds you are not seeing, are the most difficult to heal</string>
     <string name="QuoteBF1">Most people die at 25 and aren’t buried until they’re 75.</string>
     <string name="QouteBP1">A drop of love is more than an ocean of mind.</string>
@@ -26,7 +25,7 @@
     <string name="QuotesGA1">All you ever wanted is on the other side of fear</string>
     <string name="QuotesJP1">Maybe there are better times, but this is our time</string>
     <string name="QuotesJWG1">It must come from the heart, what should touch the heart</string>
-    <string name="QuotesJWG2">Wer nicht angefangen hat, wird niemals fertig werden</string>
+    <string name="QuotesJWG2">Who never started will never finish</string>
     <string name="QuotesJW1">Don\'t give up on your dreams or your dreams will give you up</string>
     <string name="QuotesJC1">The cage you dare not enter holds the treasure you seek</string>
     <string name="QuotesJ1">Pain is not only seen in tears, sometimes it is hidden behind a smile</string>

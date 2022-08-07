@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/all"
+        android:icon="@drawable/all"
+        android:title="All Quotes"
+        android:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/people"
+        android:icon="@drawable/ic_people"
+        android:title="People"
+        android:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/samsungdesign"
+        android:icon="@drawable/ic_alternative_version"
+        android:title="Material Design"
+        android:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/about"
+        android:icon="@drawable/ic_oui_ab_app_info"
+        android:title="About"
+        android:showAsAction="ifRoom" />
+</menu>

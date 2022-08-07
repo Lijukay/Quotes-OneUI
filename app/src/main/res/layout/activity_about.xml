@@ -10,6 +10,10 @@
     android:id="@+id/toolbar_about"
     app:navigationIcon="@drawable/ic_back">
 
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/refreshAbout">
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -45,14 +49,7 @@
                        android:src="@drawable/ic_iconmonstr_github_1"/>
 
                </LinearLayout>
-               <TextView
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:textSize="11sp"
-                   android:paddingHorizontal="15dp"
-                   android:textColor="?android:textColorPrimary"
-                   android:text="@string/Info"/>
-           </LinearLayout>
+                </LinearLayout>
 
            <dev.oneuiproject.oneui.widget.Separator
                android:layout_width="match_parent"
@@ -64,8 +61,7 @@
             app:cardUseCompatPadding="true"
             app:cardCornerRadius="24dp"
             android:elevation="10dp"
-            android:background="@color/cardView"
-            android:backgroundTint="@color/cardView">
+            android:backgroundTint="@color/oui_background_color">
 
             <TextView
                 android:padding="10dp"
@@ -73,7 +69,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/Yanndroid"
                 android:textColor="?android:textColorPrimary"
-                android:textStyle="italic"
                 android:textSize="20sp"/>
 
         </androidx.cardview.widget.CardView>
@@ -84,8 +79,7 @@
                app:cardUseCompatPadding="true"
                app:cardCornerRadius="24dp"
                android:elevation="10dp"
-               android:background="@color/cardView"
-               android:backgroundTint="@color/cardView">
+               android:backgroundTint="@color/oui_background_color">
 
                <TextView
                    android:padding="10dp"
@@ -93,12 +87,35 @@
                    android:layout_height="wrap_content"
                    android:text="@string/BlackMesa"
                    android:textColor="?android:textColorPrimary"
-                   android:textStyle="italic"
                    android:textSize="20sp"/>
 
            </androidx.cardview.widget.CardView>
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center"
+               android:id="@+id/updateT"
+               android:text="A new version of this app is available"
+               android:textSize="20sp"
+               android:textColor="@color/textColor"
+               android:visibility="gone"
+               android:paddingBottom="10dp"/>
+
+           <Button
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Update"
+               android:id="@+id/updateB"
+               android:textColor="@color/textColor"
+               android:layout_gravity="center"
+               android:theme="@style/OneUI.AppInfoButton"
+               android:visibility="gone"/>
+
        </LinearLayout>
 
+
     </androidx.core.widget.NestedScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </dev.oneuiproject.oneui.layout.ToolbarLayout>

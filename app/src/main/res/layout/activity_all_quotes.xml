@@ -4,20 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".AllActivity"
     app:expanded="true"
-    app:title="@string/app_name"
-    android:id="@+id/tl"
-    tools:menu="@menu/menu_main">
+    app:title="All Quotes"
+    tools:menu="@menu/menu_aq">
 
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/swipeEC"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeAll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/editorsChoiceRV"
+            android:id="@+id/allQuotesRV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/oui_background_color"/>
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 </dev.oneuiproject.oneui.layout.ToolbarLayout>

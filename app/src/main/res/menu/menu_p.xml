@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/allP"
+        android:icon="@drawable/all"
+        android:title="All Quotes"
+        android:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/ecP"
+        android:icon="@drawable/ec"
+        android:title="Editors Choice"
+        android:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/samsungdesignP"
+        android:icon="@drawable/ic_alternative_version"
+        android:title="Material Design"
+        android:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/aboutP"
+        android:icon="@drawable/ic_oui_ab_app_info"
+        android:title="About"
+        android:showAsAction="ifRoom" />
+</menu>

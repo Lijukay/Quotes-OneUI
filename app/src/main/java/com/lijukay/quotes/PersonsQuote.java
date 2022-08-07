@@ -28,123 +28,146 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
-    private RecyclerView mRecyclerView;
-    private ECAdapter mECAdapter;
-    private ArrayList<ECItems> mECItem;
-    private RequestQueue mRequestQueue;
-    private SwipeRefreshLayout swipeRefreshLayoutEC;
+import dev.oneuiproject.oneui.layout.ToolbarLayout;
+
+public class PersonsQuote extends AppCompatActivity {
+    private RecyclerView mRecyclerViewPQ;
+    private PQAdapter mPQAdapter;
+    private ArrayList<PQItem> mPQItem;
+    private RequestQueue mRequestQueuePQ;
+    private String pQuotes;
+    private String authorP;
+    private SwipeRefreshLayout swipeRefreshLayoutPQ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_persons_quote);
 
-        mRecyclerView = findViewById(R.id.editorsChoiceRV);
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mECItem = new ArrayList<>();
-        swipeRefreshLayoutEC = findViewById(R.id.swipeEC);
-        swipeRefreshLayoutEC.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+
+
+        Intent intent = getIntent();
+
+        authorP = intent.getStringExtra("authorP");
+
+        ToolbarLayout toolbarLayout = findViewById(R.id.tlPQ);
+        toolbarLayout.setTitle(authorP);
+
+
+        mRecyclerViewPQ = findViewById(R.id.PQRV);
+        mRecyclerViewPQ.setHasFixedSize(true);
+        mRecyclerViewPQ.setLayoutManager(new LinearLayoutManager(this));
+
+        mPQItem = new ArrayList<>();
+
+        swipeRefreshLayoutPQ = findViewById(R.id.swipePQ);
+        swipeRefreshLayoutPQ.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                Toast.makeText(MainActivity.this, "Refreshing... please wait", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PersonsQuote.this, "Refreshing... please wait", Toast.LENGTH_SHORT).show();
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        swipeRefreshLayoutEC.setRefreshing(false);
-                        mECItem.clear();
-                        mECAdapter.notifyDataSetChanged();
-                        parseJSON();
+                        swipeRefreshLayoutPQ.setRefreshing(false);
+                        mPQItem.clear();
+                        mPQAdapter.notifyDataSetChanged();
+                        parseJSONPQ();
                     }
                 }, 2000);
             }
         });
-        mRequestQueue = Volley.newRequestQueue(this);
-        parseJSON();
+
+        mRequestQueuePQ = Volley.newRequestQueue(this);
+        parseJSONPQ();
     }
 
-    private void parseJSON() {
-        String url = "https://lijukay.github.io/quotesaltdesign/editorschoice.json";
+    private void parseJSONPQ() {
+        String urlPQ = "https://lijukay.github.io/quotesaltdesign/editorschoice.json";
 
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-                response -> {
+
+        JsonObjectRequest requestPQ = new JsonObjectRequest(Request.Method.GET, urlPQ, null,
+                responsePQ -> {
                     try {
-                        JSONArray jsonArray = response.getJSONArray("EditorsChoice");
+                        pQuotes = authorP;
+                        JSONArray jsonArrayPQ = responsePQ.getJSONArray(pQuotes);
 
-                        for(int i = 0; i < jsonArray.length(); i++){
-                            JSONObject ec = jsonArray.getJSONObject(i);
+                        for(int a = 0; a < jsonArrayPQ.length(); a++){
+                            JSONObject pq = jsonArrayPQ.getJSONObject(a);
 
-                            String quoteEC = ec.getString("quote");
-                            String authorEC = ec.getString("author");
+                            String quotePQ = pq.getString("quotePQ");
+                            String authorPQ = pq.getString("authorPQ");
 
-                            mECItem.add(new ECItems(authorEC, quoteEC));
+                            mPQItem.add(new PQItem(authorPQ, quotePQ));
                         }
 
-                        mECAdapter = new ECAdapter(MainActivity.this, mECItem);
-                        mRecyclerView.setAdapter(mECAdapter);
-                        mRecyclerView.addItemDecoration(new ItemDecoration(this));
-                        Log.e("intent", "Hat geklappt...");
+                        mPQAdapter = new PQAdapter(PersonsQuote.this, mPQItem);
+                        mRecyclerViewPQ.setAdapter(mPQAdapter);
+                        mRecyclerViewPQ.addItemDecoration(new ItemDecoration(this));
+                        Log.e("intent", "Hat geklapptAll...");
                     } catch (JSONException e) {
                         e.printStackTrace();
-                        Log.e("error", "hat nicht geklappt...");
+                        Log.e("error", "hat nicht geklapptall...");
                     }
-                }, error -> {
-            error.printStackTrace();
-            Log.e("error", "Hat nicht geklappt 2");
+                }, errorPQ -> {
+            errorPQ.printStackTrace();
+            Log.e("error", "Hat nicht geklappt 2all");
         });
-        mRequestQueue.add(request);
+        mRequestQueuePQ.add(requestPQ);
     }
 
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+    public boolean onCreateOptionsMenu(Menu menuPQ) {
+        getMenuInflater().inflate(R.menu.menu_aq, menuPQ);
         return true;
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == R.id.about){
+        if(item.getItemId() == R.id.aboutA){
             AboutApp();
             return true;
-        } else if(item.getItemId() == R.id.samsungdesign){
+        } else if(item.getItemId() == R.id.samsungdesignA){
             SamsungDesign();
             return true;
-        } else if(item.getItemId() == R.id.people){
+        } else if(item.getItemId() == R.id.personsA){
             People();
             return true;
-        } else if(item.getItemId() == R.id.all){
-            All();
+        } else if(item.getItemId() == R.id.ecA){
+            ECA();
             return true;
         } else {
             return super.onOptionsItemSelected(item);
         }
     }
 
-    private void All() {
-        Intent intentAM = new Intent(this, AllActivity.class);
+    private void ECA() {
+        Intent intentAM = new Intent(this, MainActivity.class);
         startActivity(intentAM);
     }
+
     private void People() {
         Intent intentP = new Intent(this, PersonsActivity.class);
         startActivity(intentP);
     }
+
     private void SamsungDesign() {
         Uri uriS = Uri.parse("https://github.com/Lijukay/quotesaltdesign");
         Intent intentS = new Intent(Intent.ACTION_VIEW, uriS);
         startActivity(intentS);
     }
+
+
     private void AboutApp() {
         Intent intentA = new Intent(this, About.class);
         startActivity(intentA);
     }
 
-    //Item Decoration, code by Yanndroid
     private static class ItemDecoration extends RecyclerView.ItemDecoration {
         private final Drawable mDivider;
         private final SeslSubheaderRoundedCorner mRoundedCorner;
@@ -177,4 +200,3 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
-
