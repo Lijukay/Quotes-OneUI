@@ -1,381 +1,223 @@
 package com.lijukay.quotes;
 
-
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.os.Bundle;
-import android.util.TypedValue;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.util.SeslRoundedCorner;
 import androidx.appcompat.util.SeslSubheaderRoundedCorner;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
+import android.util.TypedValue;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import com.lijukay.quotes.About;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import java.util.ArrayList;
-import dev.oneuiproject.oneui.layout.ToolbarLayout;
 
 public class PersonsActivity extends AppCompatActivity {
-
-    private ArrayList<Quotes> quotesList;
-    private RecyclerView recyclerViewq;
+    private RecyclerView mRecyclerViewP;
+    private PersonsAdapter mPAdapter;
+    private ArrayList<PersonsItem> mPItem;
+    private RequestQueue mRequestQueueP;
+    private PersonsAdapter.RecyclerViewClickListener listener;
+    private SwipeRefreshLayout swipeRefreshLayoutP;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.persons_activity);
-        ToolbarLayout toolbarLayout = findViewById(R.id.toolbar_persons);
+        setContentView(R.layout.activity_person);
 
-        String personsName = "personsName not set";
-        //Get extras to set the Title of the Toolbar-Layout
-        Bundle extras = getIntent().getExtras();
-        if (extras != null){
-            personsName = extras.getString("personsName");
-        }
-        //set the title of the Toolbar-Layout with the name of the clicked Item from MainActivity.java
-        toolbarLayout.setTitle(personsName);
-        //set Navigation Button as back to always go back to the MainActivity
-        toolbarLayout.setNavigationButtonAsBack();
-        //Set Toolbar-Animation(?), code by BlackMesa123
-        toolbarLayout.getAppBarLayout().addOnOffsetChangedListener((appBarLayout, verticalOffset) -> {
-            final int totalScrollRange = appBarLayout.getTotalScrollRange();
-            FrameLayout content = findViewById(dev.oneuiproject.oneui.R.id.main_content);
-            if (content != null) {
-                content.setTranslationY(((float) (Math.abs(verticalOffset) - totalScrollRange)) / 2.0f);
+
+        mRecyclerViewP = findViewById(R.id.personsRV);
+        mRecyclerViewP.setHasFixedSize(true);
+        mRecyclerViewP.setLayoutManager(new LinearLayoutManager(this));
+
+        mPItem = new ArrayList<>();
+        swipeRefreshLayoutP = findViewById(R.id.swipeP);
+        swipeRefreshLayoutP.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                Toast.makeText(PersonsActivity.this, "Refreshing... please wait", Toast.LENGTH_SHORT).show();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        swipeRefreshLayoutP.setRefreshing(false);
+                        mPItem.clear();
+                        mPAdapter.notifyDataSetChanged();
+                        parseJSONP();
+                    }
+                }, 2000);
             }
         });
 
-        recyclerViewq = findViewById(R.id.recyclerViewQuotes);
-        quotesList = new ArrayList<>();
+        mRequestQueueP = Volley.newRequestQueue(this);
+        parseJSONP();
 
 
 
-        //Switch to add items to the RecyclerView based on personsName, sorted by the Name
-        switch (personsName){
-            //A
-            case "Astrid Alauda":
-                setQuotesNameAA();
-                break;
-            //B
-            case "Benjamin Franklin":
-                setQuotesNameBF();
-                break;
-            case "Blaise Pascal":
-                setQuotesNameBP();
-                break;
-            case "Bob Marley":
-                setQuotesNameBM();
-                break;
-            //C
-            case "Charles Bukowski":
-                setQuotesNameCB();
-                break;
-            case "Coco Chanel":
-                setQuotesNameCC();
-                break;
-            //D
-            case "Dolly Parton":
-                setQuotesNameDP();
-                break;
-            //E
-            case "Ernest Hemingway":
-                setQuotesNameEH();
-                break;
-            //F
-            case "Franz Kafka":
-                setQuotesNameFK();
-            //G
-            case "George Addair":
-                setQuotesNameGA();
-                break;
-            //H
-            //I
-            //J
-            case "Johann Wolfgang Goethe":
-                setQuotesNameJWG();
-                break;
-            case "Joker":
-                setQuotesNameJ();
-                break;
-            case "Joseph Camphell":
-                setQuotesNameJC();
-                break;
-            case "John Wooden":
-                setQuotesNameJW();
-                break;
-            case "Jackson Brown":
-                setQuotesNameJB();
-                break;
-            case "Jean Paul":
-                setQuotesNameJP();
-                break;
-            //K
-            case "Konfuzius":
-                setQuotesNameK();
-                break;
-            //L
-            case "Lew Tolstoi":
-                setQuotesNameLT();
-                break;
-            case "Lilian Dickson":
-                setQuotesNameLD();
-                break;
-            case "Lucius Seneca":
-                setQuotesNameLS();
-                break;
-            case "Laotse":
-                setQuotesNameL();
-                break;
-            //M
-            case "Mark Aurel":
-                setQuotesNameMA();
-                break;
-            //N
-            //O
-            //P
-            case "Pablo Picasso":
-                setQuotesNamePP();
-                break;
-            //Q
-            //R
-            case "Robert Schuller":
-                setQuotesNameRS();
-                break;
-            //S
-            //T
-            //U
-            case "Unknown":
-                setQuotesNameU();
-                break;
-            //V
-            //W
-            case "William Shakespeare":
-                setQuotesNameWS();
-                break;
-            case "Winnie Pooh":
-                setQuotesNameWP();
-                break;
-            //X
-            //Y
-            //Z
+    }
 
-            //#
+    private void parseJSONP() {
+        String urlP = "https://lijukay.github.io/quotesaltdesign/editorschoice.json";
+
+
+        JsonObjectRequest requestP = new JsonObjectRequest(Request.Method.GET, urlP, null,
+                responseP -> {
+                    try {
+                        JSONArray jsonArrayP = responseP.getJSONArray("Persons");
+
+                        for(int a = 0; a < jsonArrayP.length(); a++){
+                            JSONObject ec = jsonArrayP.getJSONObject(a);
+
+                            String authorP = ec.getString("authorP");
+
+                            mPItem.add(new PersonsItem(authorP));
+                        }
+
+                        setOnClickListener();
+                        mPAdapter = new PersonsAdapter(PersonsActivity.this, mPItem, listener);
+                        mRecyclerViewP.setAdapter(mPAdapter);
+                        mRecyclerViewP.addItemDecoration(new ItemDecoration(this));
+                        Log.e("intent", "Hat geklapptAll...");
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        Log.e("error", "hat nicht geklapptall...");
+                    }
+                }, errorAll -> {
+            errorAll.printStackTrace();
+            Log.e("error", "Hat nicht geklappt 2all");
+        });
+        mRequestQueueP.add(requestP);
+    }
+
+    private void setOnClickListener() {
+        listener = (v, position) -> {
+            String urlP = "https://lijukay.github.io/quotesaltdesign/editorschoice.json";
+
+
+            JsonObjectRequest requestP = new JsonObjectRequest(Request.Method.GET, urlP, null,
+                    responseP -> {
+                        try {
+                            JSONArray jsonArrayP = responseP.getJSONArray("Persons");
+
+                            JSONObject ec = jsonArrayP.getJSONObject(position);
+
+                            String authorP = ec.getString("authorP");
+
+                            mPItem.add(new PersonsItem(authorP));
+
+                            Intent intent = new Intent(PersonsActivity.this, PersonsQuote.class);
+                            intent.putExtra("authorP", authorP);
+                            startActivity(intent);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Log.e("error", "hat nicht geklapptall...");
+                        }
+                    }, errorAll -> {
+                errorAll.printStackTrace();
+                Log.e("error", "Hat nicht geklappt 2all");
+            });
+            mRequestQueueP.add(requestP);
+
+        };
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_p, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.aboutP){
+            AboutApp();
+            return true;
+        } else if(item.getItemId() == R.id.samsungdesignP){
+            SamsungDesign();
+            return true;
+        } else if(item.getItemId() == R.id.ecP){
+            ECP();
+            return true;
+        } else if(item.getItemId() == R.id.allP){
+            All();
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
         }
-
-        setAdapterq();
     }
 
-    //Set Quotes, sorted by Name of Person
-    //A
-    private void setQuotesNameAA() {
-        quotesList.add(new Quotes(getString(R.string.QuoteAA1)));
+    private void All() {
+        Intent intentAM = new Intent(this, AllActivity.class);
+        startActivity(intentAM);
     }
-    //B
-    private void setQuotesNameBF() {
-        quotesList.add(new Quotes(getString(R.string.QuoteBF1)));
-    }
-    private void setQuotesNameBP() {
-        quotesList.add(new Quotes(getString(R.string.QouteBP1)));
-    }
-    private void setQuotesNameBM() {
-        quotesList.add(new Quotes(getString(R.string.QuoteBM1)));
-        quotesList.add(new Quotes(getString(R.string.QuoteBM2)));
-        quotesList.add(new Quotes(getString(R.string.QuoteBM3)));
-        quotesList.add(new Quotes(getString(R.string.QuoteBM4)));
-    }
-    //C
-    private void setQuotesNameCB() {
-        quotesList.add(new Quotes(getString(R.string.QuoteCB1)));
-    }
-    private void setQuotesNameCC(){
-        quotesList.add(new Quotes(getString(R.string.QuoteCC1)));
-        quotesList.add(new Quotes(getString(R.string.QuoteCC2)));
-    }
-    //D
-    private void setQuotesNameDP() {
-        quotesList.add(new Quotes(getString(R.string.QuoteDP1)));
-        quotesList.add(new Quotes(getString(R.string.QuoteDP2)));
-    }
-    //E
-    private void setQuotesNameEH() {
-        quotesList.add(new Quotes(getString(R.string.QuoteEH1)));
-    }
-    //F
-    private void setQuotesNameFK(){
-        quotesList.add(new Quotes(getString(R.string.QuoteFK1)));
-    }
-    //G
-    private void setQuotesNameGA(){
-        quotesList.add(new Quotes(getString(R.string.QuotesGA1)));
-    }
-    //H
-    //I
-    //J
-    private void setQuotesNameJP() {
-        quotesList.add(new Quotes(getString(R.string.QuotesJP1)));
-    }
-    private void setQuotesNameJWG(){
-        quotesList.add(new Quotes(getString(R.string.QuotesJWG1)));
-        quotesList.add(new Quotes(getString(R.string.QuotesJWG2)));
-    }
-    private void setQuotesNameJW() {
-        quotesList.add(new Quotes(getString(R.string.QuotesJW1)));
-    }
-    private void setQuotesNameJC() {
-        quotesList.add(new Quotes(getString(R.string.QuotesJC1)));
-    }
-    private void setQuotesNameJ() {
-        quotesList.add(new Quotes(getString(R.string.QuotesJ1)));
-        quotesList.add(new Quotes(getString(R.string.QuotesJ2)));
-    }
-    private void setQuotesNameJB(){
-        quotesList.add(new Quotes(getString(R.string.QuoteJB1)));
-    }
-    //K
-    private void setQuotesNameK(){
-        quotesList.add(new Quotes(getString(R.string.QuoteK1)));
-    }
-    //L
-    private void setQuotesNameLT(){
-        quotesList.add(new Quotes(getString(R.string.QuoteLT1)));
-    }
-    private void setQuotesNameLD() {
-        quotesList.add(new Quotes(getString(R.string.QuoteLD1)));
-    }
-    private void setQuotesNameLS() {
-        quotesList.add(new Quotes(getString(R.string.QuoteLS1)));
-    }
-    private void setQuotesNameL(){
-        quotesList.add(new Quotes(getString(R.string.QuoteL1)));
-    }
-    //M
-    private void setQuotesNameMA(){
-        quotesList.add(new Quotes(getString(R.string.QuoteMA1)));
-    }
-    //N
-    //O
-    //P
-    private void setQuotesNamePP(){
-        quotesList.add(new Quotes(getString(R.string.QuotePP1)));
-    }
-    //Q
-    //R
-    //S
-    private void setQuotesNameRS() {
-        quotesList.add(new Quotes(getString(R.string.QuoteRS1)));
-    }
-    //T
-    //U
-    private void setQuotesNameU() {
-        quotesList.add(new Quotes(getString(R.string.QuoteU1)));
-        quotesList.add(new Quotes(getString(R.string.QuoteU2)));
-        quotesList.add(new Quotes(getString(R.string.QuoteU3)));
-        quotesList.add(new Quotes(getString(R.string.QuoteU4)));
-        quotesList.add(new Quotes(getString(R.string.QuoteU5)));
-        quotesList.add(new Quotes(getString(R.string.QuoteU6)));
-        quotesList.add(new Quotes(getString(R.string.QuoteU7)));
-        quotesList.add(new Quotes(getString(R.string.QuoteU8)));
-        quotesList.add(new Quotes(getString(R.string.QuoteU9)));
-        quotesList.add(new Quotes(getString(R.string.QuoteU10)));
-        quotesList.add(new Quotes(getString(R.string.QuoteU11)));
-        quotesList.add(new Quotes(getString(R.string.QuoteU12)));
-        quotesList.add(new Quotes(getString(R.string.QuoteU13)));
-        quotesList.add(new Quotes(getString(R.string.QuoteU14)));
-        quotesList.add(new Quotes(getString(R.string.QuoteU15)));
-        quotesList.add(new Quotes(getString(R.string.QuoteU16)));
-        quotesList.add(new Quotes(getString(R.string.QuoteU17)));
-        quotesList.add(new Quotes(getString(R.string.QuoteU18)));
-        quotesList.add(new Quotes(getString(R.string.QuoteU19)));
-        quotesList.add(new Quotes(getString(R.string.QuoteU20)));
-        quotesList.add(new Quotes(getString(R.string.QuoteU21)));
-        quotesList.add(new Quotes(getString(R.string.QuoteU22)));
-    }
-    //V
-    //W
-    private void setQuotesNameWP() {
-        quotesList.add(new Quotes(getString(R.string.QuoteWP1)));
-        quotesList.add(new Quotes(getString(R.string.QuoteWP2)));
-    }
-    private void setQuotesNameWS() {
-        quotesList.add(new Quotes(getString(R.string.QuoteWS1)));
-        quotesList.add(new Quotes(getString(R.string.QuoteWS2)));
-    }
-    //X
-    //Y
-    //Z
 
-    //Adapter
-    private void setAdapterq() {
-        QuotesAdapter adapterq = new QuotesAdapter(this, quotesList);
-        RecyclerView.LayoutManager layoutManagerq = new LinearLayoutManager(getApplicationContext());
-        recyclerViewq.setLayoutManager(layoutManagerq);
-        recyclerViewq.setAdapter(adapterq);
-        recyclerViewq.addItemDecoration(new ItemDecorationq(this));
-        recyclerViewq.setItemAnimator(null);
-        recyclerViewq.seslSetFillBottomEnabled(true);
-        recyclerViewq.seslSetLastRoundedCorner(true);
+    private void ECP() {
+        Intent intentP = new Intent(this, MainActivity.class);
+        startActivity(intentP);
     }
-    //Item Decoration, code by Yanndroid
-    private static class ItemDecorationq extends RecyclerView.ItemDecoration {
-        private final Drawable mDividerq;
-        private final SeslSubheaderRoundedCorner mRoundedCornerq;
 
-        public ItemDecorationq(@NonNull Context contextq) {
-            TypedValue outValueq = new TypedValue();
-            contextq.getTheme().resolveAttribute(dev.oneuiproject.oneui.R.attr.isLightTheme, outValueq, true);
+    private void SamsungDesign() {
+        Uri uriS = Uri.parse("https://github.com/Lijukay/quotesaltdesign");
+        Intent intentS = new Intent(Intent.ACTION_VIEW, uriS);
+        startActivity(intentS);
+    }
 
-            mDividerq = contextq.getDrawable(outValueq.data == 0
+
+    private void AboutApp() {
+        Intent intentA = new Intent(this, About.class);
+        startActivity(intentA);
+    }
+
+    private static class ItemDecoration extends RecyclerView.ItemDecoration {
+        private final Drawable mDivider;
+        private final SeslSubheaderRoundedCorner mRoundedCorner;
+
+        public ItemDecoration(@NonNull Context context) {
+            TypedValue outValue = new TypedValue();
+            context.getTheme().resolveAttribute(dev.oneuiproject.oneui.R.attr.isLightTheme, outValue, true);
+
+            mDivider = context.getDrawable(outValue.data == 0
                     ? dev.oneuiproject.oneui.R.drawable.sesl_list_divider_dark
                     : dev.oneuiproject.oneui.R.drawable.sesl_list_divider_light);
 
-            mRoundedCornerq = new SeslSubheaderRoundedCorner(contextq);
-            mRoundedCornerq.setRoundedCorners(SeslRoundedCorner.ROUNDED_CORNER_ALL);
+            mRoundedCorner = new SeslSubheaderRoundedCorner(context);
+            mRoundedCorner.setRoundedCorners(SeslRoundedCorner.ROUNDED_CORNER_ALL);
         }
-
         @Override
-        public void onDraw(@NonNull Canvas q, @NonNull RecyclerView parentq,
-                           @NonNull RecyclerView.State stateq) {
-            super.onDraw(q, parentq, stateq);
+        public void onDraw(@NonNull Canvas c, @NonNull RecyclerView parent,
+                           @NonNull RecyclerView.State state) {
+            super.onDraw(c, parent, state);
 
-            for (int qu= 0; qu < parentq.getChildCount(); qu++) {
-                View childq = parentq.getChildAt(qu);
-                QuotesAdapter.QViewHolder holderq
-                        = (QuotesAdapter.QViewHolder) parentq.getChildViewHolder(childq);
-                if (!holderq.isSeparatorq) {
-                    final int topq = childq.getBottom()
-                            + ((ViewGroup.MarginLayoutParams) childq.getLayoutParams()).bottomMargin;
-                    final int bottomq = mDividerq.getIntrinsicHeight() + topq;
+            for (int i= 0; i < parent.getChildCount(); i++) {
+                View child = parent.getChildAt(i);
+                final int top = child.getBottom()
+                        + ((ViewGroup.MarginLayoutParams) child.getLayoutParams()).bottomMargin;
+                final int bottom = mDivider.getIntrinsicHeight() + top;
 
-                    mDividerq.setBounds(parentq.getLeft(), topq, parentq.getRight(), bottomq);
-                    mDividerq.draw(q);
-                }
-            }
-        }
-
-        @Override
-        public void seslOnDispatchDraw(Canvas q, RecyclerView parentq, RecyclerView.State stateq) {
-            for (int qu = 0; qu < parentq.getChildCount(); qu++) {
-                View childq = parentq.getChildAt(qu);
-                QuotesAdapter.QViewHolder holderq
-                        = (QuotesAdapter.QViewHolder) parentq.getChildViewHolder(childq);
-                if (holderq.isSeparatorq) {
-                    mRoundedCornerq.drawRoundedCorner(childq, q);
-                }
+                mDivider.setBounds(parent.getLeft(), top, parent.getRight(), bottom);
+                mDivider.draw(c);
             }
         }
     }
 }
-
-
-//TODO: set quotesName Texts as Strings and add translation
-
-//TODO: Add a about App page
-
-
-
-
-
-// TODO: learn how you can save an instance with sharedPreferences or database and take the time you need
