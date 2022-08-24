@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".AllActivity"
     app:expanded="true"
-    app:title="All Quotes"
+    app:title="@string/all_quotes"
     tools:menu="@menu/menu_aq">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     app:expanded="true"
-    app:title="Persons"
+    app:title="@string/persons"
     android:id="@+id/tl"
     tools:menu="@menu/menu_main">
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout

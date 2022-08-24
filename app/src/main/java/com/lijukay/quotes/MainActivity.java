@@ -32,6 +32,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
@@ -60,17 +61,60 @@ public class MainActivity extends AppCompatActivity {
                         swipeRefreshLayoutEC.setRefreshing(false);
                         mECItem.clear();
                         mECAdapter.notifyDataSetChanged();
-                        parseJSON();
+                        getLanguage();
                     }
                 }, 2000);
             }
         });
         mRequestQueue = Volley.newRequestQueue(this);
-        parseJSON();
+        getLanguage();
+    }
+
+    private void getLanguage() {
+        String lang = Locale.getDefault().getLanguage();
+        if (lang.equals("en")){
+            parseJSON();
+        } else if (lang.equals("de")){
+            parseJSONGER();
+        } else{
+            parseJSON();
+        }
+    }
+
+    private void parseJSONGER() {
+        String urlGER = "https://lijukay.github.io/Quotes-M3/quotesGER.json";
+
+        JsonObjectRequest requestGER = new JsonObjectRequest(Request.Method.GET, urlGER, null,
+                response -> {
+                    try {
+                        JSONArray jsonArrayGER = response.getJSONArray("EditorsChoice");
+
+                        for(int i = 0; i < jsonArrayGER.length(); i++){
+                            JSONObject ec = jsonArrayGER.getJSONObject(i);
+
+                            String quoteECGER = ec.getString("quote");
+                            String authorECGER = ec.getString("author");
+
+                            mECItem.add(new ECItems(authorECGER, quoteECGER));
+                        }
+
+                        mECAdapter = new ECAdapter(MainActivity.this, mECItem);
+                        mRecyclerView.setAdapter(mECAdapter);
+                        mRecyclerView.addItemDecoration(new ItemDecoration(this));
+                        Log.e("intent", "Hat geklappt...");
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        Log.e("error", "hat nicht geklappt...");
+                    }
+                }, error -> {
+            error.printStackTrace();
+            Log.e("error", "Hat nicht geklappt 2");
+        });
+        mRequestQueue.add(requestGER);
     }
 
     private void parseJSON() {
-        String url = "https://lijukay.github.io/quotesaltdesign/editorschoice.json";
+        String url = "https://lijukay.github.io/Quotes-M3/quotesEN.json";
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 response -> {
@@ -135,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intentP);
     }
     private void SamsungDesign() {
-        Uri uriS = Uri.parse("https://github.com/Lijukay/quotesaltdesign");
+        Uri uriS = Uri.parse("https://github.com/Lijukay/Quotes-M3");
         Intent intentS = new Intent(Intent.ACTION_VIEW, uriS);
         startActivity(intentS);
     }

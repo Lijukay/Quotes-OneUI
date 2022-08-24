@@ -31,8 +31,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
+import java.util.Locale;
 
-    public class AllActivity extends AppCompatActivity {
+public class AllActivity extends AppCompatActivity {
         private RecyclerView mRecyclerViewAll;
         private AllAdapter mAllAdapter;
         private ArrayList<AllItem> mAllItem;
@@ -56,15 +57,58 @@ import java.util.ArrayList;
                     swipeRefreshLayoutAll.setRefreshing(false);
                     mAllItem.clear();
                     mAllAdapter.notifyDataSetChanged();
-                    parseJSONAll();
+                    getLanguageA();
                 }, 2000);
             });
             mRequestQueueAll = Volley.newRequestQueue(this);
-            parseJSONAll();
+            getLanguageA();
         }
 
-        private void parseJSONAll() {
-            String urlAll = "https://lijukay.github.io/quotesaltdesign/editorschoice.json";
+        private void getLanguageA() {
+            String langA = Locale.getDefault().getLanguage();
+            if (langA.equals("en")){
+                parseJSONAll();
+            } else if (langA.equals("de")){
+                parseJSONAllGER();
+            } else {
+                parseJSONAll();
+            }
+        }
+
+    private void parseJSONAllGER() {
+        String urlAllGER = "https://lijukay.github.io/Quotes-M3/quotesGER.json";
+
+        JsonObjectRequest requestAllGER = new JsonObjectRequest(Request.Method.GET, urlAllGER, null,
+                responseAll -> {
+                    try {
+                        JSONArray jsonArrayAllGER = responseAll.getJSONArray("AllQuotes");
+
+                        for(int a = 0; a < jsonArrayAllGER.length(); a++){
+                            JSONObject ec = jsonArrayAllGER.getJSONObject(a);
+
+                            String quoteAllGER = ec.getString("quoteAll");
+                            String authorAllGER = ec.getString("authorAll");
+
+                            mAllItem.add(new AllItem(authorAllGER, quoteAllGER));
+                        }
+
+                        mAllAdapter = new AllAdapter(AllActivity.this, mAllItem);
+                        mRecyclerViewAll.setAdapter(mAllAdapter);
+                        mRecyclerViewAll.addItemDecoration(new ItemDecoration(this));
+                        Log.e("intent", "Hat geklapptAll...");
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        Log.e("error", "hat nicht geklapptall...");
+                    }
+                }, errorAll -> {
+            errorAll.printStackTrace();
+            Log.e("error", "Hat nicht geklappt 2all");
+        });
+        mRequestQueueAll.add(requestAllGER);
+    }
+
+    private void parseJSONAll() {
+            String urlAll = "https://lijukay.github.io/Quotes-M3/quotesEN.json";
 
             JsonObjectRequest requestAll = new JsonObjectRequest(Request.Method.GET, urlAll, null,
                     responseAll -> {
@@ -131,7 +175,7 @@ import java.util.ArrayList;
         }
 
         private void SamsungDesign() {
-            Uri uriS = Uri.parse("https://github.com/Lijukay/quotesaltdesign");
+            Uri uriS = Uri.parse("https://github.com/Lijukay/Quotes-M3");
             Intent intentS = new Intent(Intent.ACTION_VIEW, uriS);
             startActivity(intentS);
         }

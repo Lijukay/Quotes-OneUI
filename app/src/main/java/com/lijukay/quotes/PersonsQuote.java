@@ -33,6 +33,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import dev.oneuiproject.oneui.layout.ToolbarLayout;
 
@@ -77,18 +78,63 @@ public class PersonsQuote extends AppCompatActivity {
                         swipeRefreshLayoutPQ.setRefreshing(false);
                         mPQItem.clear();
                         mPQAdapter.notifyDataSetChanged();
-                        parseJSONPQ();
+                        getLanguagePQ();
                     }
                 }, 2000);
             }
         });
 
         mRequestQueuePQ = Volley.newRequestQueue(this);
-        parseJSONPQ();
+        getLanguagePQ();
+    }
+
+    private void getLanguagePQ() {
+        String langPQ = Locale.getDefault().getLanguage();
+        if (langPQ.equals("en")){
+            parseJSONPQ();
+        } else if (langPQ.equals("de")){
+            parseJSONPQGER();
+        } else {
+            parseJSONPQ();
+        }
+    }
+
+    private void parseJSONPQGER() {
+        String urlPQ = "https://lijukay.github.io/Quotes-M3/quotesGER.json";
+
+
+        JsonObjectRequest requestPQGER = new JsonObjectRequest(Request.Method.GET, urlPQ, null,
+                responsePQGER -> {
+                    try {
+                        pQuotes = authorP;
+                        JSONArray jsonArrayPQGER = responsePQGER.getJSONArray(pQuotes);
+
+                        for(int a = 0; a < jsonArrayPQGER.length(); a++){
+                            JSONObject pq = jsonArrayPQGER.getJSONObject(a);
+
+                            String quotePQGER = pq.getString("quotePQ");
+                            String authorPQGER = pq.getString("authorPQ");
+
+                            mPQItem.add(new PQItem(authorPQGER, quotePQGER));
+                        }
+
+                        mPQAdapter = new PQAdapter(PersonsQuote.this, mPQItem);
+                        mRecyclerViewPQ.setAdapter(mPQAdapter);
+                        mRecyclerViewPQ.addItemDecoration(new ItemDecoration(this));
+                        Log.e("intent", "Hat geklapptAll...");
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        Log.e("error", "hat nicht geklapptall...");
+                    }
+                }, errorPQ -> {
+            errorPQ.printStackTrace();
+            Log.e("error", "Hat nicht geklappt 2all");
+        });
+        mRequestQueuePQ.add(requestPQGER);
     }
 
     private void parseJSONPQ() {
-        String urlPQ = "https://lijukay.github.io/quotesaltdesign/editorschoice.json";
+        String urlPQ = "https://lijukay.github.io/Quotes-M3/quotesEN.json";
 
 
         JsonObjectRequest requestPQ = new JsonObjectRequest(Request.Method.GET, urlPQ, null,
@@ -157,7 +203,7 @@ public class PersonsQuote extends AppCompatActivity {
     }
 
     private void SamsungDesign() {
-        Uri uriS = Uri.parse("https://github.com/Lijukay/quotesaltdesign");
+        Uri uriS = Uri.parse("https://github.com/Lijukay/Quotes-M3");
         Intent intentS = new Intent(Intent.ACTION_VIEW, uriS);
         startActivity(intentS);
     }

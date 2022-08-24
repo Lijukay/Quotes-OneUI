@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Zitate</string>
+    <string name="persons">Personen</string>
+    <string name="about">Über</string>
+    <string name="About">Über diese App</string>
+    <string name="ST">Vielen Dank</string>
+    <string name="Yanndroid">... an Yanndroid, der nicht aufgehört hat, mir die Dinge zu erklären, auch wenn ich es nicht verstanden habe and der mir immer geholfen hatte, wenn ich ein Problem hatte.</string>
+    <string name="RM">Fehler gefunden? Kontakt:</string>
+    <string name="BlackMesa">... an BlackMesa, der mir geholfen hat, die App zu optimieren</string>
+    <string name="all_quotes">Alle Zitate</string>
+</resources>

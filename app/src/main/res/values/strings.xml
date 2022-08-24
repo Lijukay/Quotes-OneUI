@@ -1,97 +1,12 @@
-<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Zitate</string>
-    <string name="persons">Personen</string>
-    <!--QuotesNameAA-->
-    <string name="QuoteAA1">Die Wunden, die du nicht siehst, sind am schwersten zu heilen</string>
-    <!--QuotesNameBF-->
-    <string name="QuoteBF1">Die meisten Menschen sterben mit 25 Jahren und werden erst begraben, wenn sie 75 sind.</string>
-    <!--QuotesNameBP-->
-    <string name="QouteBP1">Ein Tropfen Liebe ist mehr als ein Ozean Verstand</string>
-    <!--QuotesNameBM-->
-    <string name="QuoteBM1">Die guten Zeiten von heute sind die traurigen Gedanken von morgen.</string>
-    <string name="QuoteBM2">Öffne die Augen, schau nach innen. Bist du zufrieden mit dem Leben, das du lebst</string>
-    <string name="QuoteBM3">Der Tag an dem du aufhörst das Rennen mitzumachen, ist der Tag an dem du das Rennen gewinnst</string>
-    <string name="QuoteBM4">Liebe das Leben, das du lebst. Lebe das Leben, das du liebst.</string>
-    <!--QuotesNameCB-->
-    <string name="QuoteCB1">Kannst du dich erinnern wer du warst, bevor dir die Welt gesagt hat, wer du bist?</string>
-    <!--QuoteNameCC-->
-    <string name="QuoteCC1">Ich bereue nichts im Leben, außer dem, was ich nicht getan habe</string>
-    <string name="QuoteCC2">Wenn man ohne Flügel geboren wurde, darf man sie nicht am wachsen hindern.</string>
-    <!--QuotesNameDP-->
-    <string name="QuoteDP2">Wenn dir jemand seine wahren Farben zeigt, vertraue ihm</string>
-    <!--QuotesNameEH-->
-    <string name="QuoteEH1">Du bist so mutig und ruhig, dass ich vergesse, dass du leidest</string>
-    <!--QuotesNameFK-->
-    <string name="QuoteFK1">Wege entstehen dadurch, dass man sie geht.</string>
-    <!--QuotesNameGA-->
-    <string name="QuotesGA1">Alles was du jemals wolltest ist auf der anderen Seite der Angst</string>
-    <!--QuotesNameJP-->
-    <string name="QuotesJP1">Vielleicht gibt es schönere Zeiten, aber das hier ist unsere Zeit</string>
-    <!--QuotesNameJWG-->
-    <string name="QuotesJWG1">Es muss vom Herzen kommen, was auf Herzen wirken soll</string>
-    <string name="QuotesJWG2">Wer nicht angefangen hat, wird niemals fertig werden</string>
-    <!--QuotesNameJW-->
-    <!--QuotesNameJC-->
-    <string name="QuotesJC1">Der Käfig, den du dich nicht traust zu betreten, hat den Schatz, den du suchst</string>
-    <!--QuotesNameJ-->
-    <string name="QuotesJ1">Schmerz sieht man nicht nur in Tränen, manchmal ist es auch hinter einem Lächeln versteckt</string>
-    <string name="QuotesJ2">Viele können dich zum lachen bringe, aber nur wenige können dich glücklich machen</string>
-    <!--QuoteNameJB-->
-    <string name="QuoteJB1">Manchmal sieht das Herz Dinge, die für das Auge unsichtbar sind</string>
-    <!--QuoteNameK-->
-    <string name="QuoteK1">Es ist nicht von Bedeutung wie langsam du gehst, solange du nicht stehenbleibst</string>
-    <!--QuoteNameLT-->
-    <string name="QuoteLT1">Alle wollen die Welt verändern aber keiner sich selbst</string>
-    <!--QuoteNameLD-->
-    <!--QuoteNameLS-->
-    <string name="QuoteLS1">Den Charakter kann man auch aus den kleinsten Handlungen erkennen</string>
-    <!--QuoteNameL-->
-    <string name="QuoteL1">Auch eine Reise von tausend Meilen beginnt mit einem Schritt</string>
-    <!--QuoteNameMA-->
-    <string name="QuoteMA1">Nicht den Tod sollte man fürchten, sondern dass man nie anfangen wird, zu leben</string>
-    <!--QuoteNamePP-->
-    <!--QuoteNameRS-->
-    <string name="QuoteRS1">Was würdest du tun, wenn du wüsstest, dass du nicht scheitern kannst?</string>
-    <!--QuoteNameU-->
-    <string name="QuoteU1">Mach es oder mach es nicht, du wirst beides bereuen</string>
-    <string name="QuoteU2">Kaputte Menschen haben das schönste Lächeln, weil sie wissen, was Glück bedeutet</string>
-    <string name="QuoteU3">Es sind nicht die Dinge, die uns Angst machen, sondern die Art und weise, wie wir über sie denken</string>
-    <string name="QuoteU4">Das schlimmste Gefühl ist, wenn du zu Hause bist aber das Gefühl hast nach Hause zu wollen</string>
-    <string name="QuoteU5">Manchmal enden schöne Dinge, weil die Leute noch nicht bereit dafür sind</string>
-    <string name="QuoteU7">Die schlimmste Art von Traurigkeit ist die, die du nicht erklären kannst.</string>
-    <string name="QuoteU8">Obwohl Gedanken nichts wiegen, kann man unter ihrer Last zusammenbrechen.</string>
-    <string name="QuoteU9">Trauer ist nicht das Gegenteil von Glück, es ist ein Teil davon.</string>
-    <string name="QuoteU10">Der Tod muss eine schöne Reise sein, denn bis jetzt ist noch keiner zurückgekehrt.</string>
-    <string name="QuoteU11">Du verdienst die Liebe, die du die ganze Zeit versuchst anderen zu geben.</string>
-    <string name="QuoteU12">Wenn ich an dich denke, dann lächle ich, doch mein Herz tut verdammt weh</string>
-    <string name="QuoteU13">Sein Herz zu verlieren ist die beste Art zu entdecken, dass man eins hat</string>
-    <string name="QuoteU14">Es ist egal, wer vor dir steht, wenn du weißt, wer hinter dir steht.</string>
-    <string name="QuoteU15">Manchmal passiert lange Zeit nichts und dann alles auf einmal</string>
-    <string name="QuoteU16">In dem Moment, wo du dich akzeptierst, wirst du schön</string>
-    <string name="QuoteU17">Das Leben wiederholt Dinge so lange, bis du die Lektion gelernt hast</string>
-    <string name="QuoteU18">Woran deine Augen hängen bleiben, zeigt dir wonach deine Seele sucht</string>
-    <string name="QuoteU19">Ich werde mich nie für mein Herz entschuldigen, das so leicht bricht, aber so stark liebt</string>
-    <string name="QuoteU20">Du kannst nicht glücklich werden, wenn das, was du etwas festhälst, das dich traurig macht</string>
-    <string name="QuoteU21">Du kannst mich berühren, ohne mich zu berühren.</string>
-    <string name="QuoteU22">Eine Beziehung zu Menschen baut man nicht in Tagen, Wochen oder Monaten auf, sondern in Momenten</string>
-    <!--QuoteNameWP-->
-    <string name="QuoteWP1">Wie buchstabiert man Liebe? Du buchstabierst es nicht, du fühlst es.</string>
-    <!--QuoteNameWS-->
-    <string name="QuoteWS1">Die ganze Welt ist eine Bühne und wir alle sind Schauspieler.</string>
-    <string name="QuoteWS2">Der Kummer,der nicht spricht, nagt am Herzen, bis es bricht.</string>
-    <!--Related CardView-->
-    <string name="about">Über</string>
-    <string name="About">Über diese App</string>
-    <!--Special thanks-->
-    <string name="ST">Besonderen Dank…</string>
-    <string name="Yanndroid">… an Yanndroid, der nicht aufgehört hat, mir die Dinge zu erklären, auch wenn ich vieles nicht verstanden habe und der mir immer wieder unter die Arme gegriffen hat, wenn ich Mal wieder ein Problem hatte.</string>
-    <string name="BlackMesa">… an BlackMesa, der mir geholfen hat, die App zu optimieren.</string>
-    <!--Reach me-->
-    <string name="RM">Fehler gefunden? Kontakt:</string>
-    <string name="QuoteDP1">Wenn du den Weg auf dem du gehst nicht magst, mach dir einen neuen</string>
-    <string name="QuotesJW1">Gib deine Träume nicht auf oder deine Träume geben dich auf</string>
-    <string name="QuoteLD1">Das Leben ist wie eine Münze, du kannst alles mit ihr kaufen, aber nur einmal</string>
-    <string name="QuotePP1">Alles, was du dir vorstellen kannst ist real</string>
-    <string name="QuoteU6">Wenn du noch nicht bereit dafür wärst, dann hättest du nicht die Möglichkeit dazu.</string>
-    <string name="QuoteWP2">Manche Leute sorgen sich zu viel um einen, ich denke, man nennt es Liebe.</string>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Quotes</string>
+    <string name="persons">Persons</string>
+    <string name="about">About</string>
+    <string name="About">About this app</string>
+    <string name="ST">Special thanks...</string>
+    <string name="Yanndroid">… to Yanndroid, who did not stopped to explain the things to me even if I did not understand much and who always helped me, when I had a problem.</string>
+    <string name="RM">Found an issue? Contact:</string>
+    <string name="BlackMesa">… to BlackMesa, who helped me to optimize this app.</string>
+    <string name="all_quotes">All quotes</string>
 </resources>

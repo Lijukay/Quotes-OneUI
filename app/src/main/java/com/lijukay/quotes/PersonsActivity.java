@@ -34,6 +34,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class PersonsActivity extends AppCompatActivity {
     private RecyclerView mRecyclerViewP;
@@ -79,7 +80,7 @@ public class PersonsActivity extends AppCompatActivity {
     }
 
     private void parseJSONP() {
-        String urlP = "https://lijukay.github.io/quotesaltdesign/editorschoice.json";
+        String urlP = "https://lijukay.github.io/Quotes-M3/quotesEN.json";
 
 
         JsonObjectRequest requestP = new JsonObjectRequest(Request.Method.GET, urlP, null,
@@ -113,7 +114,7 @@ public class PersonsActivity extends AppCompatActivity {
 
     private void setOnClickListener() {
         listener = (v, position) -> {
-            String urlP = "https://lijukay.github.io/quotesaltdesign/editorschoice.json";
+            String urlP = "https://lijukay.github.io/Quotes-M3/quotesEN.json";
 
 
             JsonObjectRequest requestP = new JsonObjectRequest(Request.Method.GET, urlP, null,
@@ -178,7 +179,7 @@ public class PersonsActivity extends AppCompatActivity {
     }
 
     private void SamsungDesign() {
-        Uri uriS = Uri.parse("https://github.com/Lijukay/quotesaltdesign");
+        Uri uriS = Uri.parse("https://github.com/Lijukay/Quotes-M3");
         Intent intentS = new Intent(Intent.ACTION_VIEW, uriS);
         startActivity(intentS);
     }

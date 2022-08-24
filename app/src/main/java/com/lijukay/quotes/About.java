@@ -76,7 +76,7 @@ public class About extends AppCompatActivity {
         parseJSONVersion();
     }
     private void parseJSONVersion() {
-        String urlU = "https://lijukay.github.io/quotesaltdesign/editorschoice.json";
+        String urlU = "https://lijukay.github.io/Quotes-M3/quotesEN.json";
 
         JsonObjectRequest requestU = new JsonObjectRequest(Request.Method.GET, urlU, null,
                 responseU -> {
@@ -98,7 +98,7 @@ public class About extends AppCompatActivity {
                             updateA.setVisibility(View.VISIBLE);
 
                             update.setOnClickListener(view -> {
-                                Uri uriU = Uri.parse("https://github.com/Lijukay/Quotes/releases");
+                                Uri uriU = Uri.parse("https://github.com/Lijukay/Quotes-OneUI/releases/latest");
                                 Intent intentU = new Intent(Intent.ACTION_VIEW, uriU);
                                 startActivity(intentU);
                             });
