@@ -9,8 +9,8 @@ android {
         applicationId "com.lijukay.quotes"
         minSdk 26
         targetSdk 32
-        versionCode 3
-        versionName "Version: 1.2.1"
+        versionCode 7
+        versionName "Version: 2.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
