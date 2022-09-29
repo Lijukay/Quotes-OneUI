@@ -16,3 +16,6 @@ Thanks to
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 Yanndroid for the library and for the help to do this application
 and to BlackMesa123 who reported issues and gave me some code to optimize my application.
+
+
+**This is archived because I decided to make just one application due to some stress in the moment. I will continue this project when I have more time.**
