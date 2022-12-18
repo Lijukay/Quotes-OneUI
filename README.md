@@ -1,4 +1,4 @@
-# Quotes is an application with a collection of quotes.
+#Quotes is an application with a collection of quotes.
 
 
 About this application:
@@ -18,8 +18,12 @@ Yanndroid for the library and for the help to do this application
 and to BlackMesa123 who reported issues and gave me some code to optimize my application.
 
 
-**This is archived because I decided to make just one application due to some stress in the moment. I will continue this project when I have more time.**
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#**Important: This repro will be deleted at 31th December 2022.**
+
+*Important
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Quotes OneUI will get some updates to fix some issues that exist and also a newer design as I learned something new. After the bug fixes,
+newer feature adding and Design implementation, this repo will be stay public but will probably not
+get any more updates.
