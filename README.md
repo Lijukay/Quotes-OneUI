@@ -1,4 +1,4 @@
-#Quotes is an application with a collection of quotes.
+# Quotes is an application with a collection of quotes.
 
 
 About this application:
